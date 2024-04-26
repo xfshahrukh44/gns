@@ -30,6 +30,8 @@
         <!-- Favicon icon -->
         <link rel="icon" type="image/png" sizes="16x16" href="{{asset(!empty($favicon->img_path)?$favicon->img_path:'')}}">
 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 
         @yield('css')
         <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
@@ -250,9 +252,12 @@
                                     <a href="{{route('front.compare')}}" class="cut-icon">
                                         <span>1</span>
                                     </a>
-                                    <a href="#" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                                       aria-controls="offcanvasRight" class="lock-icon">
-                                        <span>0</span>
+{{--                                    <a href="#" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"--}}
+{{--                                       aria-controls="offcanvasRight" class="lock-icon">--}}
+{{--                                        <span>0</span>--}}
+{{--                                    </a>--}}
+                                    <a href="{{route('cart')}}" type="button" aria-controls="offcanvasRight" class="lock-icon">
+                                        <span>{{count(session()->get('cart')) ?? 0}}</span>
                                     </a>
                                 </div>
                                 <div class="side-zero">
@@ -543,6 +548,7 @@
                 integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
                 crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
         <script src="{{asset('js/custom.js')}}"></script>
         @yield('js')

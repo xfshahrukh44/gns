@@ -158,7 +158,8 @@ class ProductController extends Controller
 
 			Session::flash('message', 'Product Added to cart Successfully');
 			Session::flash('alert-class', 'alert-success');
-			return redirect('/cart');	
+            return redirect()->route('cart')->with('success', 'Product Added to cart Successfully');
+//			return redirect('/cart');
 
 		} else {
 
@@ -207,7 +208,8 @@ class ProductController extends Controller
 		Session::put('cart', $cart);
 		Session::flash('message', 'Your Cart Updated Successfully');
 		Session::flash('alert-class', 'alert-success');
-		return redirect('/checkout');
+//		return redirect('/cart');
+		return redirect()->route('cart')->with('success', 'Your Cart Updated Successfully');
 	}
 
 

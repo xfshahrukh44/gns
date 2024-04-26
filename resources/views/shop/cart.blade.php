@@ -212,11 +212,15 @@
                         </div>
                         <div class="checkoutsec">
                             <div class="row align-items-center">
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <a style="text-decoration:none;" href="{{ route('product') }}" class="btn proceed_button"><i class="fa fa-angle-left "></i> Continue Shopping </a>
                                 </div>
-                                <div class="col-md-6 text-right">
-                                    <a style="text-decoration:none;" href="javascript:void(0)" class="updateCart btn btnDonate proceed_button"> Proceed to Checkout </a>
+                                <div class="col-md-4 text-right">
+                                    <button type="submit" style="text-decoration:none;" href="javascript:void(0)" class="updateCart btn btnDonate proceed_button">Update cart</button>
+
+                                </div>
+                                <div class="col-md-4 text-right">
+                                    <a style="text-decoration:none;" href="{{route('checkout')}}" class="updateCart btn btnDonate proceed_button"> Proceed to Checkout </a>
 
                                 </div>
                             </div>
@@ -241,6 +245,12 @@
 @section('js')
 
     <script type="text/javascript">
+        @if(session()->has('success'))
+            toastr.success('{{session()->get('success')}}');
+        @endif
+        @if(session()->has('error'))
+            toastr.error('{{session()->get('error')}}');
+        @endif
         $(document).on('click', ".updateCart", function(e) {
 
             $('#type').val($(this).attr('data-attr'));

@@ -482,9 +482,11 @@ class OrderController extends Controller
 			//echo "data saved";
 			//return;
 			if (Auth::check()) {
-				return redirect('/');
+                return redirect()->route('home')->with('success', 'Your Order has been placed Successfully');
+//				return redirect('/');
 			} else {
-				return redirect('/');
+                return redirect()->route('home')->with('success', 'Your Order has been placed Successfully');
+//				return redirect('/');
 			}
 		}
 	}
