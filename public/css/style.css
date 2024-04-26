@@ -1,0 +1,896 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: "Livvic", sans-serif;
+}
+
+.container {
+  max-width: 1140px;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+figure {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+@font-face {
+  font-family: woodmart-font;
+  src: url(../fonts/woodmart-font.woff2);
+}
+
+/* header css start */
+
+header {
+  position: relative;
+  z-index: 1;
+}
+.top-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+
+.navbar-brand {
+  width: 50%;
+}
+
+.category-search {
+  width: 42%;
+  position: relative;
+  z-index: 0;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+}
+
+.category-search input {
+  width: 75%;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  padding: 8px 14px;
+  border: 2px solid #0000001a;
+  height: 45px;
+}
+
+.logo-web {
+  width: 25%;
+}
+
+.search-icon:after {
+  content: "\f130";
+  font-family: "woodmart-font";
+}
+.search-icon:before {
+  display: none;
+}
+.search-icon {
+  position: absolute;
+  z-index: 0;
+  right: 0;
+  top: 0;
+  background: #0d51c0;
+  color: white;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom-right-radius: 30px;
+  border-top-right-radius: 30px;
+  font-size: 20px;
+}
+
+.top-right-links {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 20px;
+}
+
+.side-icon .heart-icon:after {
+  content: "\f106";
+  font-family: "woodmart-font";
+}
+
+.side-icon .cut-icon:after {
+  content: "\f128";
+  font-family: "woodmart-font";
+}
+
+.side-icon .lock-icon:after {
+  content: "\f126";
+  font-family: "woodmart-font";
+}
+.side-icon {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.side-links a {
+  color: #333;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.side-icon a {
+  color: #333;
+  font-size: 18px;
+  position: relative;
+  z-index: 0;
+}
+
+.side-zero a span {
+  color: #333;
+  font-weight: 700;
+  font-size: 16px;
+}
+.side-icon a span {
+  position: absolute;
+  z-index: 0;
+  right: -5px;
+  top: -5px;
+  background-color: #0d51c0;
+  color: #fff;
+  font-size: 9px;
+  width: 14px;
+  height: 14px;
+  border-radius: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header .navbar {
+  background: #e01c1e;
+  padding: 0 50px;
+}
+.drop-menu {
+  padding: 10px 15px;
+  width: 270px;
+  border: 1px solid #81818133;
+  background: #ffffff;
+  color: #333;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  z-index: 0;
+}
+.drop-menu:before {
+  font-size: 18px;
+  content: "\f15a";
+  font-family: "woodmart-font";
+  position: absolute;
+  left: 18px;
+}
+.drop-menu:after {
+  font-size: 11px;
+  content: "\f129";
+  font-family: "woodmart-font";
+  position: absolute;
+  z-index: 0;
+  right: 20px;
+  top: 15px;
+}
+#menu-categories {
+  position: absolute;
+  z-index: 10;
+  width: 270px;
+  border: 1px solid #00000013;
+  background: white;
+  top: 45px;
+  left: 0;
+  display: none;
+}
+
+.collaps-side {
+  position: relative;
+  z-index: 0;
+}
+
+#menu-categories li {
+  border: 1px solid #00000013;
+  padding: 12px 18px;
+}
+#menu-categories li a {
+  color: #333;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.navbar-nav {
+  gap: 10px;
+}
+
+.navbar-nav li a {
+  color: white !important;
+  font-weight: 700;
+}
+
+.category-search select {
+  height: 45px;
+  border-left: none;
+  width: 82%;
+  border: 2px solid #0000001a;
+}
+.flex-collaps {
+  display: flex;
+  align-items: center;
+  gap: 200px;
+}
+.respone-items {
+  display: none;
+}
+/* header css end */
+
+/* banner-video css start */
+
+.banner-video {
+  position: relative;
+  z-index: 0;
+}
+
+.gns-fitting {
+  position: relative;
+  z-index: 0;
+}
+
+.banner-info {
+  position: absolute;
+  z-index: 1;
+  top: 20%;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.banner-info h1 {
+  color: white;
+  font-weight: 700;
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+.banner-info h1 span {
+  font-weight: 400;
+  font-size: 45px;
+}
+
+.banner-info p {
+  margin: auto;
+  width: 35%;
+  color: white;
+  font-weight: 500;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+.gns-fitting:before {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  background: #00000085;
+  content: "";
+  width: 100%;
+  height: 100%;
+}
+
+.red-btn {
+  background: #e01c1e;
+  color: white;
+  width: 213.54px;
+  padding: 10px 41px;
+  font-weight: 700;
+}
+/* banner-video css end */
+
+/* discount-solution css start */
+
+.discount-solution {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  transition: all ease 0.5s;
+}
+
+.info-shop {
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.info-shop h3 {
+  color: white;
+  font-weight: 600;
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+
+.solution-img img {
+  width: 100%;
+  object-fit: cover;
+  height: 350px;
+  transition: all ease 0.5s;
+}
+
+.discount-solution:hover .solution-img img {
+  transition: all ease 0.5s;
+  transform: scale(1.1);
+}
+
+.solution-img {
+  position: relative;
+  z-index: 0;
+  transition: all ease 0.5s;
+}
+.solution-img:before {
+  position: absolute;
+  z-index: 100;
+  content: "";
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  transition: all ease 0.5s;
+  left: 0;
+}
+
+.discount-solution:hover .solution-img:before {
+  background-color: rgb(0 0 0 / 71%);
+  transition: all ease 0.5s;
+}
+
+.blue-btn {
+  background: #0d51c0;
+  color: white;
+  padding: 5px 40px;
+  height: 56px;
+  font-size: 16px;
+  line-height: 2.8;
+  font-weight: 700;
+  border-radius: 0;
+  border: none;
+}
+
+/* discount-solution css end */
+
+/* shop-category css start */
+
+.shop-category {
+  padding: 60px 0;
+  background-color: #f7f7f7;
+}
+
+.same-heading {
+  text-align: center;
+  border-bottom: 1px solid #0000001b;
+  margin-bottom: 20px;
+}
+
+.same-heading h2 {
+  line-height: 50px;
+  font-size: 40px;
+  color: #242424;
+  font-weight: 600;
+  display: inline-block;
+  border-bottom: 2px solid #0d51c0;
+  padding-bottom: 10px;
+}
+
+.product-category {
+  position: relative;
+  z-index: 0;
+  transition: all ease 0.5s;
+  cursor: pointer;
+}
+
+.product-info img {
+  border-radius: 10px;
+  height: 350px;
+  transition: all ease 0.5s;
+}
+
+.animate-blue {
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  top: 50%;
+  right: 0;
+  text-align: center;
+  transition: all ease 0.5s;
+}
+.product-category:before {
+  position: absolute;
+  z-index: 0;
+  content: "";
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  border-radius: 10px;
+  transition: all ease 0.5s;
+  opacity: 0.1;
+}
+.animate-blue h6 {
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  background: #0d51c0;
+  display: inline-block;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  position: absolute;
+  z-index: 0;
+  transition: all ease 0.5s;
+  left: 0;
+  right: 0;
+  width: 50%;
+  margin: auto;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.animate-blue a h6 {
+  all: unset;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  opacity: 0;
+  transition: all ease 0.5s;
+}
+.product-category:hover .product-info img {
+  transform: scale(1.1);
+  transition: all ease 0.5s;
+}
+
+.product-info {
+  overflow: hidden;
+}
+.product-category:hover:before {
+  opacity: 1;
+  transition: all ease 0.5s;
+}
+.product-category:hover .animate-blue h6 {
+  opacity: 0;
+  transition: all ease 0.5s;
+}
+
+.product-category:hover .animate-blue a h6 {
+  opacity: 1;
+  transition: all ease 0.5s;
+}
+
+/* shop-category css end */
+
+/* feature-porduct css start */
+
+.feature-porduct {
+  padding-bottom: 50px;
+}
+
+.featured-pro-info {
+  position: relative;
+  z-index: 0;
+  transition: all ease 0.5s;
+}
+
+.featured-side-icon ul {
+  position: absolute;
+  z-index: 0;
+  right: 10px;
+  top: 12px;
+  transform: translateX(0px) translateZ(0);
+  background: #ffffff;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  transition: all ease 0.5s;
+  opacity: 0;
+}
+
+.featured-side-icon ul li:nth-child(1):after {
+  content: "\f128";
+  font-family: "woodmart-font";
+}
+.featured-side-icon ul li:nth-child(2):after {
+  content: "\f130";
+  font-family: "woodmart-font";
+}
+.featured-side-icon ul li:nth-child(3):after {
+  content: "\f106";
+  font-family: "woodmart-font";
+}
+.featured-side-icon ul li a {
+  position: absolute;
+  z-index: 0;
+  right: 0;
+  top: 0;
+  width: 120px;
+  text-align: end;
+  transition: all ease 0.5s;
+  opacity: 0;
+}
+.featured-side-icon ul li {
+  font-size: 18px;
+  padding: 5px 5px;
+  position: relative;
+  z-index: 0;
+}
+.featured-side-icon ul li a span {
+  font-size: 13px;
+  background: black;
+  padding: 10px;
+  color: white;
+  font-weight: 500;
+  position: relative;
+  z-index: 0;
+}
+.featured-side-icon ul li a span:before {
+  top: 50%;
+  left: 100%;
+  margin-top: -5px;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #000;
+  position: absolute;
+  z-index: 20;
+  content: "";
+}
+
+.add-pro-info {
+  position: absolute;
+  z-index: 0;
+  bottom: -40px;
+  left: 0;
+  right: 0;
+  transition: all ease 0.5s;
+  height: 40px;
+}
+
+.featured-side-icon {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.add-pro-info a {
+  width: 100%;
+}
+.add-pro-info .cart-red {
+  background: #0d51c0;
+  color: white;
+  font-weight: 500;
+  font-size: 16px;
+  height: 40px;
+  line-height: 1.5;
+  transition: all ease 0.5s;
+}
+
+.add-pro-info a {
+  position: absolute;
+  z-index: 0;
+  bottom: 0px;
+  transition: all ease 0.5s;
+}
+.featured-side-icon ul li:hover a {
+  right: 50px;
+  transition: all ease 0.5s;
+  opacity: 1;
+}
+.featured-pro-info:hover .hover-icon {
+  transition: all ease 0.5s;
+  transform: translateX(-10px) translateZ(0);
+  opacity: 1;
+}
+.cart-product {
+  overflow: hidden;
+}
+
+.featured-pro-info:hover .add-pro-info {
+  transition: all ease 0.5s;
+  bottom: 0;
+}
+.add-pro-info .cart-blue {
+  bottom: -13px;
+  transition: all ease 0.5s;
+  background: #e01c1e;
+  opacity: 0;
+}
+
+.add-pro-info:hover .cart-blue {
+  bottom: 0;
+  opacity: 1;
+  height: 40px;
+  transition: all ease 0.5s;
+}
+.add-pro-info:hover .cart-blue span:after {
+  content: "\f123";
+  font-family: "woodmart-font";
+  color: white;
+  font-size: 20px;
+}
+.discription-pro {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.discription-pro a {
+  display: block;
+  color: black;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.discription-pro span {
+  font-size: 15px;
+  color: #0d51c0;
+  font-weight: 700;
+}
+/* feature-porduct css end */
+
+/* about-fitting css start */
+
+.about-fitting {
+  background-image: url(../images/02.jpg);
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 600px;
+  position: relative;
+  z-index: 0;
+}
+
+.about-fitting:before {
+  position: absolute;
+  z-index: 0;
+  content: "";
+  right: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: black;
+}
+
+.about-gns-fitting {
+  padding: 80px;
+}
+
+.about-gns-fitting h5 {
+  line-height: 35px;
+  font-size: 25px;
+  color: #0d51c0;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.about-gns-fitting h3 {
+  color: white;
+  font-size: 40px;
+  font-weight: 600;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #0d51c0;
+  display: inline-block;
+}
+.about-gns-fitting p {
+  width: 85%;
+  color: white;
+  font-size: 17px;
+  margin-top: 20px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+/* about-fitting css end */
+
+/* main-testimonials css start */
+
+.client-review {
+  padding: 50px 0;
+}
+.main-testimonials {
+  background: #0d51c0;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+.review-discription p {
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  font-size: 18px;
+}
+.review-discription h6 {
+  text-align: center;
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+}
+.star-rating {
+  padding: 10px 0;
+  text-align: center;
+  font-size: 20px;
+  color: #eabe12;
+}
+
+.star-rating:after {
+  content: "\f148""\f148""\f148""\f148""\f148";
+  font-family: woodmart-font;
+}
+
+.client_testimonials .owl-nav button {
+  position: absolute;
+  z-index: 0;
+  outline: none !important;
+  background: transparent !important;
+  color: black !important;
+}
+
+.client_testimonials .owl-nav .owl-prev {
+  left: -80px;
+  top: 30%;
+}
+
+.client_testimonials .owl-nav .owl-prev span {
+  font-size: 80px;
+}
+
+.client_testimonials .owl-nav .owl-next {
+  right: -80px;
+  top: 30%;
+}
+.client_testimonials .owl-dots span {
+  background: transparent !important;
+  border: 1px solid black;
+}
+
+.client_testimonials .owl-dots .active span {
+  background: black !important;
+}
+
+.client_testimonials .owl-nav .owl-next span {
+  font-size: 80px;
+}
+/* main-testimonials css end */
+
+/* footer css start */
+
+footer {
+  background: #092143;
+  padding: 50px 0;
+  padding-bottom: 0;
+}
+
+.footer-links h6 {
+  margin-top: 20px;
+  line-height: 30px;
+  font-size: 20px;
+  color: #ffffff;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.footer-links ul li {
+  padding: 3px 0;
+}
+
+.footer-links ul li a {
+  color: white;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.footer-links p {
+  color: white;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.footer-links ul li a img {
+  width: 30px;
+}
+.footer-links .icon-links {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.copy-right-para p {
+  color: #ffffffcc;
+  text-align: center;
+  padding: 20px 0;
+  font-weight: 500;
+  margin-top: 100px;
+  border-top: 1px solid #ffffffcc;
+}
+/* footer css end */
+
+/* modal right css start */
+.right-modal-side {
+  width: 350px !important;
+}
+.right-modal-side #offcanvasRightLabel {
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
+}
+
+.right-modal-side .btn-close {
+  color: black;
+  margin-right: 0px;
+  opacity: 1;
+  font-size: 12px;
+}
+.right-modal-side .text-reset {
+  background: transparent;
+  border: none;
+  color: black !important;
+  font-weight: 700;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+}
+.right-modal-side .cart-items:before {
+  content: "\f147";
+  font-family: "woodmart-font";
+  font-size: 100px;
+  color: #00000012;
+}
+
+.right-modal-side .cart-items h6 {
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 18px;
+  color: #242424;
+}
+
+.right-modal-side .cart-items {
+  text-align: center;
+}
+.right_modal_side .form-group label {
+  color: black;
+  font-weight: 400;
+  font-size: 16px;
+  font-family: "Poppins";
+}
+
+.right_modal_side .form-group .form-control {
+  border-radius: 20px;
+  height: 40px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  font-size: 17px;
+}
+.right_modal_side .form-group .blue-btn {
+  width: 100%;
+  height: 40px;
+  line-height: 1;
+}
+.check-remember {
+  margin-top: 15px;
+}
+
+.right_modal_side .cart-items:before {
+  content: "\f124";
+}
+/* modal right css end */

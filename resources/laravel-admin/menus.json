@@ -1,0 +1,24 @@
+{
+  "menus": [
+    {
+      "section": "Modules",
+      "items": [
+        {
+          "title": "Books",
+          "icon": "<i class='fas fa-book mr-1'><\/i>",
+          "url": "\/admin\/book"
+        },
+        {
+          "title": "Articles",
+          "icon": "<i class='fas fa-newspaper mr-1'><\/i>",
+          "url": "\/admin\/article"
+        },
+        {
+          "title": "Videos",
+          "icon": "<i class='fas fa-video mr-1'><\/i>",
+          "url": "\/admin\/video"
+        }
+      ]
+    }
+  ]
+}

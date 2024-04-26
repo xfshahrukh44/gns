@@ -1,0 +1,753 @@
+/* about css start */
+
+.inner-banner {
+  background: #0a0a0a;
+  padding: 50px 0;
+}
+
+.about-banner {
+  text-align: center;
+}
+
+.about-banner h1 {
+  color: white;
+  font-size: 70px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.about-banner h5 {
+  color: white;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.about-banner h5 a {
+  color: white;
+}
+
+.about-inners .about-gns-fitting h3 {
+  color: black;
+  border: none;
+}
+
+.about-inners {
+  all: unset;
+}
+
+.about-inners .about-gns-fitting p {
+  color: black;
+  width: 100%;
+}
+
+.about-inners:before {
+  display: none;
+}
+
+/* about css end */
+
+/* category-pg  css start */
+
+.category-pg .product-info img {
+  height: 250px;
+  border-radius: 0;
+}
+
+.category-pg .product-category {
+  margin-bottom: 30px;
+}
+
+/* category-pg  css end */
+
+/* contact us  css start */
+
+.get-touch {
+  padding-bottom: 60px;
+  padding-top: 50px;
+}
+
+.store-printing h1 {
+  font-size: 40px;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 30px;
+}
+
+.link-support h3 {
+  display: inline-block;
+  border-bottom: 2px solid #000;
+  font-size: 20px;
+  line-height: 30px;
+  text-shadow: 1px 1px #fff, 1px -1px #fff, -1px 1px #fff, -1px -1px #fff;
+  font-weight: 700;
+  color: #242424;
+  margin-bottom: 22px;
+  margin-top: 25px;
+}
+
+.store-printing p {
+  font-weight: 400;
+  font-size: 16px;
+  margin-bottom: 20px;
+  font-family: "Poppins";
+  width: 90%;
+}
+
+.store-printing p a {
+  color: #c7a957;
+  font-weight: 400;
+}
+
+.store-printing p a {
+  color: black;
+  font-weight: 400;
+}
+
+.store-printing span {
+  color: #000000;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.store-printing {
+  margin-top: 40px;
+}
+
+.store-printing form .form-control {
+  font-size: 14px;
+  height: 42px;
+  font-weight: 400;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  font-family: "Poppins";
+}
+
+.store-printing form textarea#exampleFormControlTextarea1 {
+  height: auto !important;
+}
+
+.store-printing form .golden-btn {
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.store-printing label {
+  font-weight: 400;
+  font-size: 15px;
+  font-family: "Poppins";
+}
+
+/* contact us  css end */
+
+/* shop page css start */
+.banner-inner {
+  background-image: url(../images/10.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 0;
+  margin-top: 160px;
+}
+
+.printing-services {
+  text-align: center;
+}
+
+.printing-services h2 {
+  font-size: 40px;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+}
+
+.printing-services p {
+  color: #ffffff;
+  font-size: 16px;
+  text-align: center;
+  margin: auto;
+  font-weight: 500;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-family: "Poppins";
+}
+
+.all-product {
+  padding: 50px 100px;
+}
+
+.print-product h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #242424;
+}
+
+.print-product ul {
+  padding-top: 20px;
+}
+
+.print-product ul li {
+  padding: 5px 0;
+  position: relative;
+  z-index: 0;
+  cursor: pointer;
+}
+
+.print-product ul li a {
+  color: #777;
+  font-weight: 400;
+  font-size: 16px;
+  font-family: "Poppins";
+}
+
+.products-img ul {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.products-img ul li span {
+  font-weight: 600;
+  color: #242424;
+  font-size: 16px;
+  font-family: "Poppins";
+}
+
+.products-img ul li {
+  color: #777;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.select-product select {
+  border: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 900;
+  color: #242424;
+  font-size: 16px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.select-product select option {
+  color: black;
+  font-weight: 600;
+}
+
+.main-product {
+  padding-top: 30px;
+}
+
+.first-product {
+  padding: 10px;
+  border: 1px solid #00000029;
+}
+
+.img-pro {
+  position: relative;
+  z-index: 0;
+}
+
+.hover-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  background: white;
+  margin: auto;
+  width: 75%;
+  height: 45px;
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: all ease 0.5s;
+  bottom: 0;
+}
+
+.hover-social a i {
+  color: black;
+  font-size: 20px;
+}
+
+.hover-social a {
+  position: relative;
+  z-index: 0;
+}
+
+.hover-social a span {
+  position: absolute;
+  z-index: 1;
+  left: -30px;
+  top: -55px;
+  width: 105px;
+  font-size: 14px;
+  color: white;
+  font-weight: 500;
+  background: black;
+  padding: 8px 0;
+  opacity: 0;
+  text-align: center;
+  transition: all ease 0.5s;
+}
+
+.hover-social a:hover span {
+  opacity: 1;
+  transition: all ease 0.5s;
+}
+
+.first-product:hover .hover-social {
+  opacity: 1;
+  transition: all ease 0.5s;
+  bottom: 10px;
+}
+
+.bottom-details h5 a {
+  font-size: 15px;
+  color: black;
+  font-weight: 600;
+}
+
+.bottom-details {
+  text-align: center;
+}
+
+.bottom-details h5 {
+  margin-bottom: 4px;
+  margin-top: 10px;
+}
+
+.bottom-details h6 a {
+  color: #a5a5a5a5;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.bottom-details span {
+  color: #c7a957;
+  font-weight: 600;
+}
+
+.paggination-div .pagination {
+  justify-content: center;
+  gap: 30px;
+  padding: 20px 0;
+}
+
+.paggination-div .pagination li a {
+  border: none;
+  color: black;
+  font-weight: 600;
+  font-size: 16px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0;
+}
+
+.paggination-div .pagination li.active a {
+  background: #c7a957;
+  color: white;
+}
+
+.print-product ul .shop_info i {
+  position: absolute;
+  z-index: 0;
+  right: 0;
+  top: 10px;
+  font-size: 12px;
+  color: #bbb;
+  width: 20px;
+  height: 20px;
+  border-radius: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f1f1f1;
+  transition: all ease 0.5s;
+}
+
+.print-product ul .shop_info .fa-angle-up.clicked {
+  transform: rotate(180deg);
+  transition: all ease 0.5s;
+}
+
+.print-product ul .shop_info .shop_show {
+  padding-left: 1rem;
+  display: none;
+}
+
+.check-side {
+  padding: 20px 0;
+}
+
+.pro-price a {
+  display: flex;
+  align-items: start;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #00000042;
+}
+
+.pro-price a figure img {
+  width: 65px;
+}
+
+.pro-price {
+  padding: 20px 0;
+}
+
+.pro-price_info h5 span {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  color: #0d51c0;
+}
+
+.pro-price_info h5 {
+  color: black;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 26px;
+}
+
+/* shop page css end */
+
+/* shop details page css start */
+
+.top-discription {
+  display: flex;
+  align-items: start;
+  gap: 20px;
+}
+
+.steel-nuts figure img {
+  width: 130px;
+}
+
+.steel-nuts h6 {
+  color: black;
+  font-weight: 500;
+  font-size: 13px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.steel-nuts-inf0 h3 {
+  font-size: 17px;
+  font-weight: 600;
+  color: black;
+}
+
+.steel-nuts-inf0 p {
+  color: black;
+  font-weight: 300;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.catalog ul {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: end;
+}
+
+.catalog ul li a {
+  color: #00599c;
+  font-weight: 500;
+  font-size: 13px;
+  border-right: 1px solid #6c757d;
+  padding-right: 5px;
+}
+
+.acme-plan h5 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 9px;
+}
+
+.acme-plan h5 span {
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.plan-para {
+  background: #ddd;
+  padding: 5px;
+}
+
+.plan-para p {
+  color: #6c757d;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.all-product table tr th {
+  width: 12.5%;
+  font-size: 13px;
+  font-weight: 600;
+  color: black;
+  padding: 4px 10px;
+}
+
+.all-product table tr td a {
+  color: black;
+  font-weight: 500;
+}
+
+.all-product table {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.all-product table tr td {
+  width: 12.5%;
+  font-size: 14px;
+  padding: 4px 10px;
+}
+
+.all-product table tr:nth-child(even) {
+  background: #f2f2f2;
+  border-bottom: 1px solid #dee2e6;
+}
+
+/* shop details page css end */
+
+/* compare page css start */
+
+.compare-list {
+  padding: 50px 0;
+}
+
+.empty-compare {
+  position: relative;
+  z-index: 0;
+  text-align: center;
+}
+
+.empty-compare h2 {
+  font-size: 55px;
+  font-weight: 600;
+  color: black;
+}
+
+.empty-compare p {
+  margin: auto;
+  width: 80%;
+  font-size: 18px;
+  font-weight: 500;
+  color: black;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.empty-compare:before {
+  content: "\f128";
+  font-family: "woodmart-font";
+  font-size: 200px;
+  color: #00000012;
+}
+
+.wishlist-empty:before {
+  content: "\f106";
+}
+
+/* compare page css end */
+
+/* inner-product page css start */
+.inner-product-sec {
+  padding: 30px 0px;
+}
+
+.compliance-img {
+  border: 1px solid gainsboro;
+  text-align: center;
+}
+
+h3.inner-product-heading {
+  background-color: #95aabb;
+  color: white;
+  margin-top: 20px;
+  font-size: 16px;
+  padding: 10px 10px;
+  font-family: 'Poppins';
+  font-weight: 600;
+  border: none;
+}
+
+.compliance-small-img {
+  display: flex;
+  gap: 15px;
+  border: 1px solid gainsboro;
+  padding: 10px 10px;
+}
+
+.compliance-small-img img {
+  width: 25px;
+  height: 25px;
+}
+
+.size-product h2 {
+  font-weight: 600;
+  font-size: 19px;
+  color: black;
+  font-family: 'Poppins';
+  margin-bottom: 30px;
+}
+
+.product-number {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  margin-top: 20px;
+  justify-content: space-between;
+}
+
+.product-number h5 {
+  font-size: 15px;
+  color: black;
+  font-weight: 500;
+  font-family: 'Poppins';
+}
+
+.product-number h6 {
+  color: black;
+  font-family: 'Poppins';
+  font-weight: 400;
+  display: flex;
+  text-align: start;
+  width: 80px;
+  font-size: 15px;
+}
+
+.catalog {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 25px;
+}
+
+.catalog img {
+  width: 35px;
+  height: 35px;
+}
+
+.catalog p {
+  color: black;
+  font-size: 16px;
+}
+.product-attribute .product-number {
+  border-left: 1px solid gainsboro;
+  border-bottom: 1px solid gainsboro;
+  margin: 0;
+  border-right: 1px solid gainsboro;
+  padding: 10px;
+}
+.product-attribute .product-number h6 {
+  width: 130px;
+  font-size: 14px;
+}
+.product-attribute .product-number h5 {
+  font-size: 14px;
+}
+.product-attribute .accordion-button {
+  padding: 20px 10px;
+}
+.accordion-button:focus {
+  background: none;
+  color: black;
+  box-shadow: none;
+}
+.accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+.product-attribute .accordion-body {
+  padding: 10px 10px;
+  margin-top: -35px;
+}
+
+.product-attribute .accordion-body p {
+  font-size: 14px;
+  color: black;
+  font-weight: 400;
+  font-family: 'Poppins';
+}
+.product-attribute ul {
+  list-style: initial;
+  padding: 10px 20px;
+}
+.wholesale h2 {
+  color: black;
+  font-size: 20px;
+  font-family: 'Poppins';
+  margin-bottom: 8px;
+}
+
+h2.bluee {
+  color: #00599c;
+}
+.supply-chain .product-number h6 {
+  width: 130px;
+  font-size: 12px;
+  border: 2px solid #f7c50d;
+  padding: 5px 5px;
+}
+
+.supply-chain .product-number {
+  justify-content: start;
+  padding: 0px 10px;
+}
+
+.supply-chain p {
+  color: black;
+  font-family: 'Poppins';
+  font-size: 14px;
+  margin-top: 10px;
+  font-weight: 500;
+  padding: 0px 10px 13px 10px;
+}
+
+.supply-chain {
+  border: 1px solid gainsboro;
+}
+
+.supply-chain h3.inner-product-heading {
+  margin-top: 0;
+}
+.quantity-inner {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 60%;
+  margin-bottom: 35px;
+  margin-top: 20px;
+}
+
+.form-control {
+  color: #212529;
+}
+
+.btn.btn-blue-inner {
+  color: white;
+  background-color: #00599C;
+  font-size: 13px;
+  font-weight: 600;
+}
+.quantity-inner h5 {
+    font-size: 18px;
+}
+.quantity-inner i {
+  margin-right: 7px;
+}
+/* inner-product page css end */
