@@ -61,54 +61,54 @@
                     </li>
                 </ul>
             </li>
-{{--            <li class="nav-item">--}}
-{{--                <a href="javascript:;"><i class="la la-shopping-cart"></i><span class="menu-title" data-i18n="Dashboard">Ecommerce</span></a>--}}
-{{--                <ul class="menu-content">--}}
-{{--                    <li class="{{ (request()->is('admin/attributes') || request()->is('admin/attributes/*')) ? 'active' : '' }}">--}}
-{{--                        <a class="menu-item" href="{{url('admin/attributes')}}"><i></i>--}}
-{{--                            <span data-i18n="eCommerce">Attributes</span>--}}
-{{--                        </a>--}}
-{{--                    </li>--}}
-{{--                    <li class="{{ (request()->is('admin/attributes-value') || request()->is('admin/attributes-value/*')) ? 'active' : '' }}">--}}
-{{--                        <a class="menu-item" href="{{url('admin/attributes-value')}}"><i></i>--}}
-{{--                            <span data-i18n="eCommerce">Attributes Values</span>--}}
-{{--                        </a>--}}
-{{--                    </li>--}}
-{{--                    <li class="{{ (request()->is('admin/category') || request()->is('admin/category/*')) ? 'active' : '' }}">--}}
-{{--                        <a class="menu-item" href="{{url('admin/category')}}"><i></i>--}}
-{{--                            <span data-i18n="eCommerce">Categories</span>--}}
-{{--                        </a>--}}
-{{--                    </li>--}}
-{{--                    <li class="{{ (request()->is('subcategory/subcategory') || request()->is('subcategory/subcategory/*')) ? 'active' : '' }}">--}}
-{{--                        <a class="menu-item" href="{{url('subcategory/subcategory')}}"><i></i>--}}
-{{--                            <span data-i18n="eCommerce">Sub Categories</span>--}}
-{{--                        </a>--}}
-{{--                    </li>--}}
+            <li class="nav-item">
+                <a href="javascript:;"><i class="la la-shopping-cart"></i><span class="menu-title" data-i18n="Dashboard">Ecommerce</span></a>
+                <ul class="menu-content">
+                    <li class="{{ (request()->is('admin/attributes') || request()->is('admin/attributes/*')) ? 'active' : '' }}">
+                        <a class="menu-item" href="{{url('admin/attributes')}}"><i></i>
+                            <span data-i18n="eCommerce">Attributes</span>
+                        </a>
+                    </li>
+                    <li class="{{ (request()->is('admin/attributes-value') || request()->is('admin/attributes-value/*')) ? 'active' : '' }}">
+                        <a class="menu-item" href="{{url('admin/attributes-value')}}"><i></i>
+                            <span data-i18n="eCommerce">Attributes Values</span>
+                        </a>
+                    </li>
+                    <li class="{{ (request()->is('admin/category') || request()->is('admin/category/*')) ? 'active' : '' }}">
+                        <a class="menu-item" href="{{url('admin/category')}}"><i></i>
+                            <span data-i18n="eCommerce">Categories</span>
+                        </a>
+                    </li>
+                    <li class="{{ (request()->is('subcategory/subcategory') || request()->is('subcategory/subcategory/*')) ? 'active' : '' }}">
+                        <a class="menu-item" href="{{url('subcategory/subcategory')}}"><i></i>
+                            <span data-i18n="eCommerce">Sub Categories</span>
+                        </a>
+                    </li>
 
-{{--                    <li class="{{ (request()->is('childsubcategory/childsubcategory') || request()->is('childsubcategory/childsubcategory/*')) ? 'active' : '' }}">--}}
-{{--                        <a class="menu-item" href="{{url('childsubcategory/childsubcategory')}}"><i></i>--}}
-{{--                            <span data-i18n="eCommerce">Child Sub Categories</span>--}}
-{{--                        </a>--}}
-{{--                    </li>--}}
+                    <li class="{{ (request()->is('childsubcategory/childsubcategory') || request()->is('childsubcategory/childsubcategory/*')) ? 'active' : '' }}">
+                        <a class="menu-item" href="{{url('childsubcategory/childsubcategory')}}"><i></i>
+                            <span data-i18n="eCommerce">Child Sub Categories</span>
+                        </a>
+                    </li>
 
 
-{{--                    <li class="{{ (request()->is('admin/product') || request()->is('admin/product/*')) ? 'active' : '' }}">--}}
-{{--                        <a class="menu-item" href="{{url('admin/product')}}"><i></i>--}}
-{{--                            <span data-i18n="eCommerce">Products</span>--}}
-{{--                        </a>--}}
-{{--                    </li>--}}
-{{--                    <li class="{{ (request()->is('admin/order/list') || request()->is('admin/order/list/*')) ? 'active' : '' }}">--}}
-{{--                        <a class="menu-item" href="{{url('admin/order/list')}}"><i></i>--}}
-{{--                            <span data-i18n="eCommerce">Orders</span>--}}
-{{--                        </a>--}}
-{{--                    </li>--}}
-{{--                </ul>--}}
-{{--            </li>--}}
-{{--            <li class="nav-item">--}}
-{{--                <a href="{{url('admin/blog')}}" target="_blank"><i class="la la-tags"></i>--}}
-{{--                    <span class="menu-title" data-i18n="eCommerce">Blog</span>--}}
-{{--                </a>--}}
-{{--            </li>--}}
+                    <li class="{{ (request()->is('admin/product') || request()->is('admin/product/*')) ? 'active' : '' }}">
+                        <a class="menu-item" href="{{url('admin/product')}}"><i></i>
+                            <span data-i18n="eCommerce">Products</span>
+                        </a>
+                    </li>
+                    <li class="{{ (request()->is('admin/order/list') || request()->is('admin/order/list/*')) ? 'active' : '' }}">
+                        <a class="menu-item" href="{{url('admin/order/list')}}"><i></i>
+                            <span data-i18n="eCommerce">Orders</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="{{url('admin/blog')}}" target="_blank"><i class="la la-tags"></i>
+                    <span class="menu-title" data-i18n="eCommerce">Blog</span>
+                </a>
+            </li>
 
             <!-- <li class="nav-item {{ (request()->is('admin/testimonial') || request()->is('admin/testimonial/*')) ? 'active' : '' }}">
                 <a href="{{url('admin/testimonial')}}"><i class="la la-quote-left"></i>

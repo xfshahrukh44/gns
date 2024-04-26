@@ -109,25 +109,29 @@
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="wholesale">
-{{--                        <h2>Wholesale: $96.2600 / package</h2>--}}
-{{--                        <h2 class="bluee">Online Price: $72.2000 / package</h2>--}}
-                        <div class="quantity-inner">
-                            <h5>QTY</h5>
-                            <input type="number" min="1" max="99999"
-                                   class=" ecom-pd-qty-input-small ie-float-left form-control p-1"
-                                   id="selected_quantity_99106553" aria-label="Quantity" value="1">
-                            <a href="#" class="btn btn-blue-inner"><i class="fa-solid fa-cart-shopping"></i>ADD</a>
+                    <form action="{{ route('save_cart') }}" method="post">
+                        @csrf
+                        <input type="hidden" name="product_id" id="product_id" value="{{ $product->id }}">
+                        <div class="wholesale">
+    {{--                        <h2>Wholesale: $96.2600 / package</h2>--}}
+    {{--                        <h2 class="bluee">Online Price: $72.2000 / package</h2>--}}
+                            <div class="quantity-inner">
+                                <h5>QTY</h5>
+                                <input type="number" min="1" max="99999"
+                                       class=" ecom-pd-qty-input-small ie-float-left form-control p-1"
+                                       id="selected_quantity_99106553" aria-label="Quantity" value="1" name="qty">
+                                <button href="#" type="submit" class="btn btn-blue-inner"><i class="fa-solid fa-cart-shopping"></i>ADD</button>
+                            </div>
+    {{--                        <div class="supply-chain">--}}
+    {{--                            <h3 class="inner-product-heading">Supply Chainv           </h3>--}}
+    {{--                            <div class="product-number">--}}
+    {{--                                <h5>Availability</h5>--}}
+    {{--                                <h6>Available Inventory</h6>--}}
+    {{--                            </div>--}}
+    {{--                            <p>This item ships from the manufacturer within 5 days</p>--}}
+    {{--                        </div>--}}
                         </div>
-{{--                        <div class="supply-chain">--}}
-{{--                            <h3 class="inner-product-heading">Supply Chainv           </h3>--}}
-{{--                            <div class="product-number">--}}
-{{--                                <h5>Availability</h5>--}}
-{{--                                <h6>Available Inventory</h6>--}}
-{{--                            </div>--}}
-{{--                            <p>This item ships from the manufacturer within 5 days</p>--}}
-{{--                        </div>--}}
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>

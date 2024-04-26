@@ -114,7 +114,7 @@
 
 
 
-    <section class="cartsec" style="background-color:#000;" >
+    <section class="cartsec" >
         <div class="container-fluid" style="padding:20px 150px 20px 150px;">
             <form method="post" action="{{ route('update_cart') }}" id="update-cart">
                 {{ csrf_field() }}
@@ -125,7 +125,7 @@
                 <div class="row row pb-5 pt-5">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="table-responsive cart-table">
-                            <table class="table table-striped table-bordered text-white">
+                            <table class="table table-bordered text-white" style="background: #e6e6e6;">
                                 <thead>
                                     <tr>
                                         <th>Item</th>
@@ -136,7 +136,7 @@
                                         <th></th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody style="color: black;">
                                     @php
                                         $count = 0;
                                     @endphp
@@ -169,12 +169,12 @@
                                             </td>
                                             <td class="text-center ">
                                                 <div class="qty center">
-                                                    <span id={{ $count }} class="minus bg-dark cartcount"
+                                                    <span id="{{ $count }}" class="minus bg-dark cartcount"
                                                         onclick="change(this.id,'-')">-</span>
                                                     <input id="{{ 'counter ' . $count }}" type="number"
                                                         class="count cartinput qtystyle" name="row[]"
                                                         value="{{ $value['qty'] }}">
-                                                    <span id={{ $count }} class=" plus bg-dark cartcount"
+                                                    <span id="{{ $count }}" class=" plus bg-dark cartcount"
                                                         onclick="change(this.id,'+')">+</span>
                                                 </div>
                                             </td>

@@ -16,7 +16,6 @@ use App\Banner;
 use App\ProductAttribute;
 use DB;
 use View;
-use Session;
 use App\Http\Traits\HelperTrait;
 use App\orders;
 use App\orders_products;
