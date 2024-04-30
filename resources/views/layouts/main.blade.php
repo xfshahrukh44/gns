@@ -247,11 +247,11 @@
                                        class="lock-icon">LOGIN / REGISTER</a>
                                 </div>
                                 <div class="side-icon">
-                                    <a href="{{route('front.wishlist')}}" class="heart-icon">
-                                    </a>
-                                    <a href="{{route('front.compare')}}" class="cut-icon">
-                                        <span>1</span>
-                                    </a>
+{{--                                    <a href="{{route('front.wishlist')}}" class="heart-icon">--}}
+{{--                                    </a>--}}
+{{--                                    <a href="{{route('front.compare')}}" class="cut-icon">--}}
+{{--                                        <span>1</span>--}}
+{{--                                    </a>--}}
 {{--                                    <a href="#" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"--}}
 {{--                                       aria-controls="offcanvasRight" class="lock-icon">--}}
 {{--                                        <span>0</span>--}}
@@ -260,12 +260,12 @@
                                         <span>{{count(session()->get('cart')) ?? 0}}</span>
                                     </a>
                                 </div>
-                                <div class="side-zero">
-                                    <a href="#" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                                       aria-controls="offcanvasRight">
-                                        <span>$0.00</span>
-                                    </a>
-                                </div>
+{{--                                <div class="side-zero">--}}
+{{--                                    <a href="#" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"--}}
+{{--                                       aria-controls="offcanvasRight">--}}
+{{--                                        <span>$0.00</span>--}}
+{{--                                    </a>--}}
+{{--                                </div>--}}
                             </div>
                         </div>
                     </div>
