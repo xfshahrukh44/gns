@@ -28,7 +28,7 @@
     <section class="all-product">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-3 col-md-3 col-12">
+                <div class="col-lg-3 col-md-3 col-12 d-none">
                     <div class="stock-category">
                         <div class="print-product">
                             <h3>STOCK STATUS</h3>
@@ -80,7 +80,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-9 col-md-9 col-12">
+                <div class="col-lg-12 col-md-12 col-12">
                     <div class="table-right">
                         <div class="top-discription">
                             <div class="steel-nuts">
