@@ -125,7 +125,7 @@
 {{--                                an issue or indoors.</p>--}}
 {{--                        </div>--}}
 {{--                    </div>--}}
-                    <table>
+                    <table class="table table-responsive">
                         <thead>
                             <tr>
                                 <?php $used_keys = []; ?>

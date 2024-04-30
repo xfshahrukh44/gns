@@ -213,7 +213,7 @@
                         <div class="checkoutsec">
                             <div class="row align-items-center">
                                 <div class="col-md-4">
-                                    <a style="text-decoration:none;" href="{{ route('product') }}" class="btn proceed_button"><i class="fa fa-angle-left "></i> Continue Shopping </a>
+                                    <a style="text-decoration:none;" href="{{ route('front.shop') }}" class="btn proceed_button"><i class="fa fa-angle-left "></i> Continue Shopping </a>
                                 </div>
                                 <div class="col-md-4 text-right">
                                     <button type="submit" style="text-decoration:none;" href="javascript:void(0)" class="updateCart btn btnDonate proceed_button">Update cart</button>
