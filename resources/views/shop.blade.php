@@ -173,33 +173,33 @@
                                     <div class="col-lg-3 col-md-3 col-6">
                                         <div class="featured-pro-info">
                                             <div class="featured-side-icon">
-                                                <ul class="hover-icon">
-                                                    <li>
-                                                        <a href="#">
-                                                            <span>Compare</span>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">
-                                                            <span>Quick view</span>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">
-                                                            <span>Add to wishlist</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
+{{--                                                <ul class="hover-icon">--}}
+{{--                                                    <li>--}}
+{{--                                                        <a href="#">--}}
+{{--                                                            <span>Compare</span>--}}
+{{--                                                        </a>--}}
+{{--                                                    </li>--}}
+{{--                                                    <li>--}}
+{{--                                                        <a href="#">--}}
+{{--                                                            <span>Quick view</span>--}}
+{{--                                                        </a>--}}
+{{--                                                    </li>--}}
+{{--                                                    <li>--}}
+{{--                                                        <a href="#">--}}
+{{--                                                            <span>Add to wishlist</span>--}}
+{{--                                                        </a>--}}
+{{--                                                    </li>--}}
+{{--                                                </ul>--}}
                                                 <div class="cart-product">
                                                     <a href="{{route('front.productDetail', $product->id)}}">
                                                         <img src="{{asset($product->image != '' ? $product->image : 'images/noimg.png')}}" class="img-fluid" alt="">
                                                     </a>
                                                 </div>
-                                                <div class="add-pro-info">
-                                                    <a href="#" class="btn cart-red"><span>ADD TO
-                                                                     CART</span></a>
-                                                    <a href="#" class="btn cart-blue"><span class="cart-icon"></span></a>
-                                                </div>
+{{--                                                <div class="add-pro-info">--}}
+{{--                                                    <a href="#" class="btn cart-red"><span>ADD TO--}}
+{{--                                                                     CART</span></a>--}}
+{{--                                                    <a href="#" class="btn cart-blue"><span class="cart-icon"></span></a>--}}
+{{--                                                </div>--}}
                                             </div>
                                             <div class="discription-pro">
                                                 <a href="#">{{$product->product_title}}</a>

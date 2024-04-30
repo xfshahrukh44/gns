@@ -136,6 +136,7 @@
                                 <th> Item number </th>
                                 <th>SKU </th>
                                 <th> Price</th>
+                                <th> Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -147,13 +148,14 @@
                                     @endforeach
                                     <td>{{$product->item_number ?? 'N/A'}}</td>
                                     <td>
-                                        @if($product->sku)
-                                            <a class="text-primary" href="{{route('front.productDetail', $product->id)}}">{{$product->sku}}</a>
-                                        @else
-                                            N/A
-                                        @endif
+                                        {{$product->sku ?? 'N/A'}}
                                     </td>
                                     <td>{{('$' . $product->price) ?? 'N/A'}}</td>
+                                    <td>
+                                        <a class="btn btn-sm btn-primary text-white" style="background: #e01c1e; border: 0px;" href="{{route('front.productDetail', $product->id)}}">
+                                            BUY
+                                        </a>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>

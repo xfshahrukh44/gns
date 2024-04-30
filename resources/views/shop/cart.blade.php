@@ -169,13 +169,13 @@
                                             </td>
                                             <td class="text-center ">
                                                 <div class="qty center">
-                                                    <span id="{{ $count }}" class="minus bg-dark cartcount"
-                                                        onclick="change(this.id,'-')">-</span>
+                                                    <button id="{{ $count }}" class="btn minus cartcount" style="background: red;"
+                                                        onclick="change(this.id,'-')">-</button>
                                                     <input id="{{ 'counter ' . $count }}" type="number"
                                                         class="count cartinput qtystyle" name="row[]"
                                                         value="{{ $value['qty'] }}">
-                                                    <span id="{{ $count }}" class=" plus bg-dark cartcount"
-                                                        onclick="change(this.id,'+')">+</span>
+                                                    <button id="{{ $count }}" class="btn  plus cartcount" style="background: red;"
+                                                        onclick="change(this.id,'+')">+</button>
                                                 </div>
                                             </td>
                                             <td>
