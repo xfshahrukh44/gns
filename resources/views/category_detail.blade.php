@@ -5,6 +5,9 @@
 @section('css')
     <style>
         thead th { position: sticky; top: 0; background: white; }
+        .all-product {
+            padding: 50px 40px !important;
+        }
     </style>
 @endsection
 
@@ -26,7 +29,8 @@
 
 
     <section class="all-product">
-        <div class="container-fluid">
+{{--        <div class="container-fluid">--}}
+        <div>
             <div class="row">
                 <div class="col-lg-3 col-md-3 col-12 d-none">
                     <div class="stock-category">
