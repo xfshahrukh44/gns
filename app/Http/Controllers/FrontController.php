@@ -62,7 +62,8 @@ class FrontController extends Controller
 //        $section = DB::table('section')->where('page_id', 7)->get();
 //
 //        return view('about', compact('page', 'section'));
-        return view('about');
+        $categories = Category::where('parent_id', 0)->get();
+        return view('about', compact('categories'));
     }
 
     public function categories(Request $request)
@@ -99,10 +100,11 @@ class FrontController extends Controller
 
     public function contact()
     {
+        $categories = Category::where('parent_id', 0)->get();
 //        $page = DB::table('pages')->where('id', 1)->first();
 //
 //        return view('contact', compact('page'));
-        return view('contact');
+        return view('contact', compact('categories'));
     }
 
     public function productDetail(Request $request, $id)

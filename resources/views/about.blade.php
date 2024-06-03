@@ -2,10 +2,6 @@
 
 @section('title', 'About')
 
-@section('css')
-
-@endsection
-
 
 @section('content')
 
