@@ -36,23 +36,67 @@
         </div>
     </section>
 
+    <?php 
+            
+        $apiKey = 'WvWbX6ydJMwVfmsWMRRD6suC'; // Replace with your remove.bg API key
+        $imageUrl = $product->feature_image();
+        
+        // Initialize cURL session
+        $ch = curl_init();
+        
+        // Set the URL and options for the cURL request
+        curl_setopt($ch, CURLOPT_URL, 'https://api.remove.bg/v1.0/removebg');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query([
+            'image_url' => $imageUrl,
+            'size' => 'auto'
+        ]));
+        curl_setopt($ch, CURLOPT_HTTPHEADER, [
+            'X-Api-Key: ' . $apiKey
+        ]);
+        
+        // Execute the cURL request
+        $response = curl_exec($ch);
+        
+        // Check for errors
+        if(curl_errno($ch)) {
+            echo 'Error:' . curl_error($ch);
+        }
+        
+        // Close the cURL session
+        curl_close($ch);
+        
+        // Save the processed image
+        $processedImage = 'processed_' . md5($imageUrl) . '.png';
+        file_put_contents($processedImage, $response);
+
+    
+    ?>
+ 
+    
     <section class="inner-product-sec">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4">
                     <div class="main-compilance">
                         <div class="compliance-img">
-                            <img src="{{$product->feature_image()}}" class="img-fluid" id="img_feature">
+                            <img src="{{asset($processedImage)}}" class="img-fluid" id="img_feature">
                         </div>
-                        <h3 class="inner-product-heading">Compliance</h3>
-                        @if (count($product_images))
-                            <div class="compliance-small-img">
-{{--                                <a href="#"><img class="imgs" src="{{$product->feature_image()}}"></a>--}}
-                                @foreach($product_images as $product_image)
-                                    <a href="#"><img class="imgs" src="{{asset($product_image->image)}}"></a>
-                                @endforeach
-                            </div>
-                        @endif
+                        <!--<h3 class="inner-product-heading">Compliance</h3>-->
+                        <!--@if (count($product_images))-->
+                        <!--    <div class="compliance-small-img">-->
+                                
+                                
+                        <!--        @foreach($product_images as $product_image)-->
+                                   
+                        <!--            <a href="#"><img class="imgs" src="{{asset($product_image->image)}}"></a>-->
+                                
+                        <!--        @endforeach-->
+                                
+                                
+                        <!--    </div>-->
+                        <!--@endif-->
                     </div>
                 </div>
                 <div class="col-lg-4">

@@ -154,8 +154,7 @@
                                             <td>
                                                 <div class="row">
                                                     <div class="col-md-3 no-margin">
-                                                        <img src="{{ asset($prod_image->image) }}" alt=""
-                                                            class="img-responsive">
+                                                        <img src="{{ asset($prod_image->image) }}" alt="" class="img-responsive">
                                                     </div>
                                                     <div class="col-md-9">
 

@@ -70,6 +70,7 @@ class ImportProducts extends Command
             $product->description = $productData['detailedDescription'];
             $product->image = $imagePath;
             $product->save();
+
             
             DB::table('product_imagess')->insert([
                         

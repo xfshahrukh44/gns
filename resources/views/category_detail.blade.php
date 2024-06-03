@@ -29,7 +29,7 @@
 
 
     <section class="all-product">
-{{--        <div class="container-fluid">--}}
+    {{--  <div class="container-fluid">--}}
         <div>
             <div class="row">
                 <div class="col-lg-3 col-md-3 col-12 d-none">
@@ -89,6 +89,8 @@
                         <div class="top-discription">
                             <div class="steel-nuts">
                                 <h6>{{number_format($category->products->count(), 0)}} Items</h6>
+                                
+                                
                                 <figure>
                                     <img src="{{asset(file_get_contents($category->image) ? $category->image : 'images/noimg.png')}}" class="img-fluid" alt="">
                                 </figure>
