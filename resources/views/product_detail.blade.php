@@ -83,20 +83,21 @@
                         <div class="compliance-img">
                             <img src="{{asset($processedImage)}}" class="img-fluid" id="img_feature">
                         </div>
-                        <!--<h3 class="inner-product-heading">Compliance</h3>-->
-                        <!--@if (count($product_images))-->
-                        <!--    <div class="compliance-small-img">-->
+                        <h3 class="inner-product-heading">Compliance</h3>
+                        @if (count($product_images))
+                            <div class="compliance-small-img">
                                 
                                 
-                        <!--        @foreach($product_images as $product_image)-->
+                                @foreach($product_images as $product_image)
                                    
-                        <!--            <a href="#"><img class="imgs" src="{{asset($product_image->image)}}"></a>-->
+{{--                                    <a href="#"><img class="imgs" src="{{asset($product_image->image)}}"></a>--}}
+                                    <a href="#"><img class="imgs" src="{{asset(remove_image_bg($product_image->image))}}"></a>
+
+                                @endforeach
                                 
-                        <!--        @endforeach-->
                                 
-                                
-                        <!--    </div>-->
-                        <!--@endif-->
+                            </div>
+                        @endif
                     </div>
                 </div>
                 <div class="col-lg-4">
