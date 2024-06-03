@@ -86,7 +86,7 @@
                 <div class="col-lg-4">
                     <div class="main-compilance">
                         <div class="compliance-img">
-                            <img src="{{asset(remove_image_bg($product->feature_image()))}}" class="img-fluid" id="img_feature">
+                            <img src="{{$product->feature_image()}}" class="img-fluid" id="img_feature">
                         </div>
                         <h3 class="inner-product-heading">Compliance</h3>
                         @if (count($product_images))
@@ -95,7 +95,7 @@
                                 
                                 @foreach($product_images as $product_image)
                                    
-                                    <a href="#"><img class="imgs" src="{{asset(remove_image_bg($product_image->image))}}"></a>
+                                    <a href="#"><img class="imgs" src="{{asset($product_image->image)}}"></a>
 {{--                                    <a href="#"><img class="imgs" src="{{asset(remove_image_bg($product_image->image))}}"></a>--}}
 
                                 @endforeach

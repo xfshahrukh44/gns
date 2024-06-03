@@ -64,3 +64,43 @@ function remove_image_bg ($url) {
     $processedImage = $image_name . '.' . $extension;
     file_put_contents($processedImage, $response);
 }
+
+function processImage($imageUrl, $apiKey = 'WvWbX6ydJMwVfmsWMRRD6suC') {
+    // Initialize cURL session
+    $ch = curl_init();
+
+    // Set the URL and options for the cURL request
+    curl_setopt($ch, CURLOPT_URL, 'https://api.remove.bg/v1.0/removebg');
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query([
+        'image_url' => $imageUrl,
+        'size' => 'auto'
+    ]));
+    curl_setopt($ch, CURLOPT_HTTPHEADER, [
+        'X-Api-Key: ' . $apiKey
+    ]);
+
+    // Execute the cURL request
+    $response = curl_exec($ch);
+
+    // Check for errors
+    if (curl_errno($ch)) {
+        echo 'Error:' . curl_error($ch);
+        return null;
+    }
+
+    // Get HTTP response code
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    if ($httpCode !== 200) {
+        echo "Error: Received HTTP code $httpCode from API\n";
+        echo "Response: $response\n";
+        return null;
+    }
+
+    // Close the cURL session
+    curl_close($ch);
+
+    // Encode the image data to base64
+    return 'data:image/png;base64,' . base64_encode($response);
+}
