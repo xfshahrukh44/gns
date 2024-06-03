@@ -3,13 +3,13 @@
 @section('css')
 <style>
 
-label{
-    color:#fff;
-}
+/*label{*/
+/*    color:#fff;*/
+/*}*/
 
-h1{
-    color:#fff;
-}
+/*h1{*/
+/*    color:#fff;*/
+/*}*/
 
 .proceed_button3 {
     background-color: transparent;
@@ -39,7 +39,8 @@ h1{
     </div>
 </section>
 
-<section class="account" style="background:#000;">
+{{--<section class="account" style="background:#000;">--}}
+<section class="account">
     <div class="container" id="from-wrapper">
 
         <br><br><br><br>
