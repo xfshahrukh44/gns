@@ -50,14 +50,17 @@ function remove_image_bg ($url) {
     // Check for errors
     if(curl_errno($ch)) {
         return $url;
-//        echo 'Error:' . curl_error($ch);
     }
 
     // Close the cURL session
     curl_close($ch);
 
     // Save the processed image
-    $processedImage = 'processed_' . md5($imageUrl) . '.png';
-
-    return $processedImage;
+    $image_name = explode(DIRECTORY_SEPARATOR, $imageUrl);
+    $image_name = $image_name[count($image_name) - 1];
+    $chunks = explode('.', $image_name);
+    $image_name = $chunks[0];
+    $extension = $chunks[1];
+    $processedImage = $image_name . '.' . $extension;
+    file_put_contents($processedImage, $response);
 }

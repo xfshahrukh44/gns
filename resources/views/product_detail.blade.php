@@ -36,7 +36,7 @@
         </div>
     </section>
 
-    <?php 
+    <?php
             
         $apiKey = 'WvWbX6ydJMwVfmsWMRRD6suC'; // Replace with your remove.bg API key
         $imageUrl = $product->feature_image();
@@ -68,8 +68,13 @@
         curl_close($ch);
         
         // Save the processed image
-        $processedImage = 'processed_' . md5($imageUrl) . '.png';
-//        file_put_contents($processedImage, $response);
+        $image_name = explode(DIRECTORY_SEPARATOR, $imageUrl);
+        $image_name = $image_name[count($image_name) - 1];
+        $chunks = explode('.', $image_name);
+        $image_name = $chunks[0];
+        $extension = $chunks[1];
+        $processedImage = $image_name . '.' . $extension;
+        file_put_contents($processedImage, $response);
 
     
     ?>
@@ -81,7 +86,7 @@
                 <div class="col-lg-4">
                     <div class="main-compilance">
                         <div class="compliance-img">
-                            <img src="{{asset($processedImage)}}" class="img-fluid" id="img_feature">
+                            <img src="{{asset(remove_image_bg($product->feature_image()))}}" class="img-fluid" id="img_feature">
                         </div>
                         <h3 class="inner-product-heading">Compliance</h3>
                         @if (count($product_images))
@@ -90,8 +95,8 @@
                                 
                                 @foreach($product_images as $product_image)
                                    
-{{--                                    <a href="#"><img class="imgs" src="{{asset($product_image->image)}}"></a>--}}
                                     <a href="#"><img class="imgs" src="{{asset(remove_image_bg($product_image->image))}}"></a>
+{{--                                    <a href="#"><img class="imgs" src="{{asset(remove_image_bg($product_image->image))}}"></a>--}}
 
                                 @endforeach
                                 
