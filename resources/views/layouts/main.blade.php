@@ -249,19 +249,19 @@
                             <h6>QUICK LINKS</h6>
                             <ul>
                                 <li>
-                                    <a href="#"> Home</a>
+                                    <a href="{{route('home')}}"> Home</a>
                                 </li>
                                 <li>
-                                    <a href="#">About Us</a>
+                                    <a href="{{route('front.about')}}">About Us</a>
                                 </li>
                                 <li>
-                                    <a href="#">Online Catalog</a>
+                                    <a href="{{route('front.shop')}}">Online Catalog</a>
                                 </li>
                                 <li>
-                                    <a href="#">Categories</a>
+                                    <a href="{{route('front.categories')}}">Categories</a>
                                 </li>
                                 <li>
-                                    <a href="#">Contact Us</a>
+                                    <a href="{{route('front.contact')}}">Contact Us</a>
                                 </li>
                             </ul>
                         </div>
@@ -270,33 +270,14 @@
                         <div class="footer-links">
                             <h6>CATEGORIES</h6>
                             <ul>
-                                <li>
-                                    <a href="#"> Abrasives</a>
-                                </li>
-                                <li>
-                                    <a href="#">Bins & Storage</a>
-                                </li>
-                                <li>
-                                    <a href="#">Chemicals</a>
-                                </li>
-                                <li>
-                                    <a href="#">Cleaning</a>
-                                </li>
-                                <li>
-                                    <a href="#">Cutting Tools</a>
-                                </li>
-                                <li>
-                                    <a href="#">Electrical</a>
-                                </li>
-                                <li>
-                                    <a href="#">Fasteners</a>
-                                </li>
-                                <li>
-                                    <a href="#">Hydraulics</a>
-                                </li>
-                                <li>
-                                    <a href="#">Paints</a>
-                                </li>
+                                @php
+                                    $footer_categories = \App\Category::where('parent_id', 0)->get();
+                                @endphp
+                                @foreach($footer_categories as $footer_category)
+                                    <li>
+                                        <a href="{{route('front.shop', ['category_id' => $footer_category->id])}}"> {{$footer_category->name}}</a>
+                                    </li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>
@@ -305,47 +286,47 @@
                             <h6>CONTACT INFO</h6>
                             <ul>
                                 <li>
-                                    <a href="#"> Address: Lorem Ipsum Avenue 123</a>
+                                    <a href="#"> Address: {!! App\Http\Traits\HelperTrait::returnFlag(519) !!}</a>
                                 </li>
                                 <li>
-                                    <a href="mailto:info@domain.com"><span>Email:</span> info@domain.com</a>
+                                    <a href="mailto:{!! App\Http\Traits\HelperTrait::returnFlag(218) !!}"><span>Email:</span> {!! App\Http\Traits\HelperTrait::returnFlag(218) !!}</a>
                                 </li>
+{{--                                <li>--}}
+{{--                                    <a href="#">Chemicals</a>--}}
+{{--                                </li>--}}
+{{--                                <li>--}}
+{{--                                    <a href="#">Cleaning</a>--}}
+{{--                                </li>--}}
                                 <li>
-                                    <a href="#">Chemicals</a>
-                                </li>
-                                <li>
-                                    <a href="#">Cleaning</a>
-                                </li>
-                                <li>
-                                    <a href="tel:+123 456 789"><span>Phone: </span> 123 456 789</a>
+                                    <a href="tel:{!! App\Http\Traits\HelperTrait::returnFlag(59) !!}"><span>Phone: </span> {!! App\Http\Traits\HelperTrait::returnFlag(59) !!}</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="footer-links">
-                            <h6>PAYMENT SYSTEM</h6>
-                            <img src="images/payment.png" class="img-fluid" alt="">
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="footer-links">
-                            <h6>SHIPPING SYSTEM</h6>
-                            <img src="images/shipping.png" class="img-fluid" alt="">
-                        </div>
-                    </div>
+{{--                    <div class="col-lg-4">--}}
+{{--                        <div class="footer-links">--}}
+{{--                            <h6>PAYMENT SYSTEM</h6>--}}
+{{--                            <img src="images/payment.png" class="img-fluid" alt="">--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="col-lg-4">--}}
+{{--                        <div class="footer-links">--}}
+{{--                            <h6>SHIPPING SYSTEM</h6>--}}
+{{--                            <img src="images/shipping.png" class="img-fluid" alt="">--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
                     <div class="col-lg-4">
                         <div class="footer-links">
                             <h6>FOLLOW US</h6>
                             <ul class="icon-links">
                                 <li>
-                                    <a href="#"><img src="images/facebook.png" class="img-fluid" alt=""></a>
+                                    <a href="{!! App\Http\Traits\HelperTrait::returnFlag(682) !!}"><img src="images/facebook.png" class="img-fluid" alt=""></a>
                                 </li>
                                 <li>
-                                    <a href="#"><img src="images/twitter.png" class="img-fluid" alt=""></a>
+                                    <a href="{!! App\Http\Traits\HelperTrait::returnFlag(1960) !!}"><img src="images/twitter.png" class="img-fluid" alt=""></a>
                                 </li>
                                 <li>
-                                    <a href="#"><img src="images/linkedin.png" class="img-fluid" alt=""></a>
+                                    <a href="{!! App\Http\Traits\HelperTrait::returnFlag(1964) !!}"><img src="images/linkedin.png" class="img-fluid" alt=""></a>
                                 </li>
                             </ul>
                         </div>
