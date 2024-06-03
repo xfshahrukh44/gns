@@ -78,8 +78,8 @@ class RegisterController extends Controller
         
         Session::flash('message', 'New Account Created Successfully'); 
         Session::flash('alert-class', 'alert-success'); 
-        return $this->registered($request, $user)
-                        ?: redirect($this->redirectPath());
+//        return $this->registered($request, $user) ?: redirect($this->redirectPath());
+        return $this->registered($request, $user) ?: redirect()->route('account');
     }
 
     /**

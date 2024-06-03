@@ -40,6 +40,55 @@
         <link rel="stylesheet" href="{{asset('css/flaticon.css')}}">
 
         <title>{{ config('app.name') }} | @yield('title')</title>
+
+        <style>
+            .myaccount-tab-menu.nav a {
+                display: block;
+                padding: 20px;
+                font-size: 16px;
+                align-items: center;
+                width: 100%;
+                font-weight: bold;
+                color: black;
+            }
+            .myaccount-tab-menu.nav a i {
+                padding-right: 10px;
+            }
+
+            .myaccount-tab-menu.nav {
+                border: 1px solid;
+            }
+
+            .myaccount-tab-menu.nav .active, .myaccount-tab-menu.nav a:hover {
+                background-color: #e01c1e;
+                color: white;
+            }
+
+            .account-details-form label.required {
+                width: 100%;
+                font-weight: 500;
+                font-size: 18px;
+            }
+            .account-details-form input {
+                border-width: 1px;
+                border-color: white;
+                border-style: solid;
+                padding-left: 15px;
+                color: black;
+                width: 100%;
+                border-radius: 3px;
+                background-color: rgb(255, 255, 255);
+                height: 52px;
+                padding-left: 15px;
+                margin-bottom: 30px;
+                color: #000000;
+                font-size: 15px;
+            }
+            .account-details-form legend {
+                font-family: CottonCandies;
+                font-size: 50px;
+            }
+        </style>
     </head>
 
     <body>
@@ -72,9 +121,17 @@
 {{--                            </div>--}}
                             <div class="top-right-links">
                                 <div class="side-links">
-                                    <a href="#" type="button" data-bs-toggle="offcanvas"
-                                       data-bs-target="#offcanvasRightes" aria-controls="offcanvasRightes"
-                                       class="lock-icon">LOGIN / REGISTER</a>
+                                    <a href="{{route('signin')}}" type="button"
+{{--                                       data-bs-toggle="offcanvas"--}}
+{{--                                       data-bs-target="#offcanvasRightes" aria-controls="offcanvasRightes"--}}
+{{--                                       class="lock-icon"--}}
+                                    >
+                                        @if(auth()->check())
+                                            Account
+                                        @else
+                                            LOGIN / REGISTER
+                                        @endif
+                                    </a>
                                 </div>
                                 <div class="side-icon">
 {{--                                    <a href="{{route('front.wishlist')}}" class="heart-icon">--}}
