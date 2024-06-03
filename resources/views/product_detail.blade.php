@@ -69,7 +69,7 @@
         
         // Save the processed image
         $processedImage = 'processed_' . md5($imageUrl) . '.png';
-        file_put_contents($processedImage, $response);
+//        file_put_contents($processedImage, $response);
 
     
     ?>
