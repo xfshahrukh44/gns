@@ -98,7 +98,7 @@
                     <div class="col-lg-12 col-md-12 col-12">
                         <div class="top-header">
                             <div class="logo-web">
-                                <a class="navbar-brand" href="#"><img src="{{asset('images/LOGO.png')}}" class="img-fluid" alt=""></a>
+                                <a class="navbar-brand" href="#"><img src="{{asset($logo->img_path)}}" class="img-fluid" alt=""></a>
                             </div>
 {{--                            <div>--}}
                             <form class="category-search" id="form_search" action="{{route('front.shop')}}">
