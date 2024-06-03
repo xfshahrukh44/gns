@@ -211,186 +211,24 @@
                 </div>
                 <div class="col-lg-12 col-md-12 col-12">
                     <div class="client_testimonials owl-carousel owl-theme">
-                        <div class="item">
+                        @foreach($reviews as $review)
+                            <div class="item">
                             <div class="main-testimonials">
-                                <div class="star-rating">
+                                <div class="star-rating-{{$review->rating ?? '1'}}">
 
                                 </div>
                                 <div class="review-discription">
-                                    <p> Lorem Ipsum is simply dummy text of the printing and typesetting
-                                        industry. Lorem Ipsum has been the industry&#8217;s standard dummy
-                                        text ever since the 1500s, when an unknown printer took a galley of
-                                        type and scrambled it to make a type specimen book
-                                    </p>
-                                    <h6> ROBERT DOS</h6>
+{{--                                    <p> Lorem Ipsum is simply dummy text of the printing and typesetting--}}
+{{--                                        industry. Lorem Ipsum has been the industry&#8217;s standard dummy--}}
+{{--                                        text ever since the 1500s, when an unknown printer took a galley of--}}
+{{--                                        type and scrambled it to make a type specimen book--}}
+{{--                                    </p>--}}
+                                    {!! $review->review ?? '' !!}
+                                    <h6>{{$review->name}}</h6>
                                 </div>
                             </div>
                         </div>
-                        <div class="item">
-                            <div class="main-testimonials">
-                                <div class="star-rating">
-
-                                </div>
-                                <div class="review-discription">
-                                    <p> Lorem Ipsum is simply dummy text of the printing and typesetting
-                                        industry. Lorem Ipsum has been the industry&#8217;s standard dummy
-                                        text ever since the 1500s, when an unknown printer took a galley of
-                                        type and scrambled it to make a type specimen book
-                                    </p>
-                                    <h6> ARLENE COOPER</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="main-testimonials">
-                                <div class="star-rating">
-
-                                </div>
-                                <div class="review-discription">
-                                    <p> Lorem Ipsum is simply dummy text of the printing and typesetting
-                                        industry. Lorem Ipsum has been the industry&#8217;s standard dummy
-                                        text ever since the 1500s, when an unknown printer took a galley of
-                                        type and scrambled it to make a type specimen book
-                                    </p>
-                                    <h6> JHON DOE</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="main-testimonials">
-                                <div class="star-rating">
-
-                                </div>
-                                <div class="review-discription">
-                                    <p> Lorem Ipsum is simply dummy text of the printing and typesetting
-                                        industry. Lorem Ipsum has been the industry&#8217;s standard dummy
-                                        text ever since the 1500s, when an unknown printer took a galley of
-                                        type and scrambled it to make a type specimen book
-                                    </p>
-                                    <h6> ROBERT DOS</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="main-testimonials">
-                                <div class="star-rating">
-
-                                </div>
-                                <div class="review-discription">
-                                    <p> Lorem Ipsum is simply dummy text of the printing and typesetting
-                                        industry. Lorem Ipsum has been the industry&#8217;s standard dummy
-                                        text ever since the 1500s, when an unknown printer took a galley of
-                                        type and scrambled it to make a type specimen book
-                                    </p>
-                                    <h6> ROBERT DOS</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="main-testimonials">
-                                <div class="star-rating">
-
-                                </div>
-                                <div class="review-discription">
-                                    <p> Lorem Ipsum is simply dummy text of the printing and typesetting
-                                        industry. Lorem Ipsum has been the industry&#8217;s standard dummy
-                                        text ever since the 1500s, when an unknown printer took a galley of
-                                        type and scrambled it to make a type specimen book
-                                    </p>
-                                    <h6> ARLENE COOPER</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="main-testimonials">
-                                <div class="star-rating">
-
-                                </div>
-                                <div class="review-discription">
-                                    <p> Lorem Ipsum is simply dummy text of the printing and typesetting
-                                        industry. Lorem Ipsum has been the industry&#8217;s standard dummy
-                                        text ever since the 1500s, when an unknown printer took a galley of
-                                        type and scrambled it to make a type specimen book
-                                    </p>
-                                    <h6> JHON DOE</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="main-testimonials">
-                                <div class="star-rating">
-
-                                </div>
-                                <div class="review-discription">
-                                    <p> Lorem Ipsum is simply dummy text of the printing and typesetting
-                                        industry. Lorem Ipsum has been the industry&#8217;s standard dummy
-                                        text ever since the 1500s, when an unknown printer took a galley of
-                                        type and scrambled it to make a type specimen book
-                                    </p>
-                                    <h6> ROBERT DOS</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="main-testimonials">
-                                <div class="star-rating">
-
-                                </div>
-                                <div class="review-discription">
-                                    <p> Lorem Ipsum is simply dummy text of the printing and typesetting
-                                        industry. Lorem Ipsum has been the industry&#8217;s standard dummy
-                                        text ever since the 1500s, when an unknown printer took a galley of
-                                        type and scrambled it to make a type specimen book
-                                    </p>
-                                    <h6> ROBERT DOS</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="main-testimonials">
-                                <div class="star-rating">
-
-                                </div>
-                                <div class="review-discription">
-                                    <p> Lorem Ipsum is simply dummy text of the printing and typesetting
-                                        industry. Lorem Ipsum has been the industry&#8217;s standard dummy
-                                        text ever since the 1500s, when an unknown printer took a galley of
-                                        type and scrambled it to make a type specimen book
-                                    </p>
-                                    <h6> ARLENE COOPER</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="main-testimonials">
-                                <div class="star-rating">
-
-                                </div>
-                                <div class="review-discription">
-                                    <p> Lorem Ipsum is simply dummy text of the printing and typesetting
-                                        industry. Lorem Ipsum has been the industry&#8217;s standard dummy
-                                        text ever since the 1500s, when an unknown printer took a galley of
-                                        type and scrambled it to make a type specimen book
-                                    </p>
-                                    <h6> JHON DOE</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="main-testimonials">
-                                <div class="star-rating">
-
-                                </div>
-                                <div class="review-discription">
-                                    <p> Lorem Ipsum is simply dummy text of the printing and typesetting
-                                        industry. Lorem Ipsum has been the industry&#8217;s standard dummy
-                                        text ever since the 1500s, when an unknown printer took a galley of
-                                        type and scrambled it to make a type specimen book
-                                    </p>
-                                    <h6> ROBERT DOS</h6>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

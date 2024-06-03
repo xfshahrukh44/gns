@@ -15,6 +15,7 @@ use App\Models\Job;
 use App\Models\News;
 use App\Models\RaceTeamMember;
 use App\Models\Recycling;
+use App\Models\Review;
 use App\Models\UsMember;
 use App\Models\Video;
 use App\Page;
@@ -48,10 +49,12 @@ class FrontController extends Controller
             ->take(8)
             ->get();
 
+        $reviews = Review::get()->take(12);
+
 //
 //        return view('welcome', compact('page', 'section', 'banner', 'blog', 'instagram', 'get_product', 'popular_books'));
         $categories = Category::where('parent_id', 0)->get();
-        return view('welcome', compact('categories', 'get_product', 'featured_product', 'shop_by_categories', 'featured_products'));
+        return view('welcome', compact('categories', 'get_product', 'featured_product', 'shop_by_categories', 'featured_products', 'reviews'));
 
     }
 

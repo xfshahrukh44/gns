@@ -366,3 +366,4 @@ Route::resource('admin/news', 'Admin\NewsController');
 Route::resource('admin/book', 'Admin\BookController');
 Route::resource('admin/article', 'Admin\ArticleController');
 Route::resource('admin/video', 'Admin\VideoController');
+Route::resource('admin/review', 'Admin\ReviewController');

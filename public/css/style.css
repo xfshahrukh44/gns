@@ -735,15 +735,59 @@ header .navbar {
   font-weight: 600;
   font-size: 18px;
 }
-.star-rating {
+
+.star-rating-5 {
   padding: 10px 0;
   text-align: center;
   font-size: 20px;
   color: #eabe12;
 }
-
-.star-rating:after {
+.star-rating-5:after {
   content: "\f148""\f148""\f148""\f148""\f148";
+  font-family: woodmart-font;
+}
+
+.star-rating-4 {
+  padding: 10px 0;
+  text-align: center;
+  font-size: 20px;
+  color: #eabe12;
+}
+.star-rating-4:after {
+  content: "\f148""\f148""\f148""\f148";
+  font-family: woodmart-font;
+}
+
+.star-rating-3 {
+  padding: 10px 0;
+  text-align: center;
+  font-size: 20px;
+  color: #eabe12;
+}
+.star-rating-3:after {
+  content: "\f148""\f148""\f148";
+  font-family: woodmart-font;
+}
+
+.star-rating-2 {
+  padding: 10px 0;
+  text-align: center;
+  font-size: 20px;
+  color: #eabe12;
+}
+.star-rating-2:after {
+  content: "\f148""\f148";
+  font-family: woodmart-font;
+}
+
+.star-rating-1 {
+  padding: 10px 0;
+  text-align: center;
+  font-size: 20px;
+  color: #eabe12;
+}
+.star-rating-1:after {
+  content: "\f148";
   font-family: woodmart-font;
 }
 
