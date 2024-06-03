@@ -30,7 +30,7 @@ class CategoryController extends Controller
         $model = str_slug('category','-');
         if(auth()->user()->permissions()->where('name','=','view-'.$model)->first()!= null) {
             $keyword = $request->get('search');
-            $perPage = 25;
+            $perPage = 250000;
 
             if (!empty($keyword)) {
                 $category = Category::where('name', 'LIKE', "%$keyword%")
@@ -76,7 +76,7 @@ class CategoryController extends Controller
 		]);
             $requestData = $request->all();
             
-            //
+            // 
             //Category::create($requestData);
 
             if ($request->hasFile('image')) {
@@ -85,14 +85,14 @@ class CategoryController extends Controller
                 $file = $request->file('image');
                 
                 //make sure yo have image folder inside your public
-                $destination_path = 'uploads/categorys/';
+                $destination_path = 'uploads/categories/';
                 $fileName = $file->getClientOriginalName();
                 $profileImage = date("Ymd").$fileName.".".$file->getClientOriginalExtension();
 
                 Image::make($file)->save(public_path($destination_path) . DIRECTORY_SEPARATOR. $profileImage);
 
-                $category->image = $destination_path.$profileImage;
-                $category->save();
+                $requestData["image"] = $destination_path.$profileImage;
+                // $category->save();
             }
 
             Category::create($requestData);
@@ -168,10 +168,10 @@ class CategoryController extends Controller
             $fileName = pathinfo($fileNameForm, PATHINFO_FILENAME);
             $fileExt = $request->file('image')->getClientOriginalExtension();
             $fileNameToStore = $fileName.'_'.time().'.'.$fileExt;
-            $pathToStore = public_path('uploads/categorys/');
+            $pathToStore = public_path('uploads/categories/');
             Image::make($file)->save($pathToStore . DIRECTORY_SEPARATOR. $fileNameToStore);
 
-             $requestData['image'] = 'uploads/categorys/'.$fileNameToStore;               
+             $requestData['image'] = 'uploads/categories/'.$fileNameToStore;               
         }
 
 

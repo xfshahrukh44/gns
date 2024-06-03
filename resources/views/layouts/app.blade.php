@@ -33,7 +33,11 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     @stack('before-css')
     <link href="{{asset('assets/css/custom.css')}}" rel="stylesheet">
-   <script src="{{ asset('vendor/unisharp/laravel-ckeditor/ckeditor.js') }}"></script>
+    <script src="{{ asset('vendor/unisharp/laravel-ckeditor/ckeditor.js') }}"></script>
+   
+    <!-- Select2 CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+   
     <!-- Custom CSS -->
     <!-- <link href="{{asset('assets/css/style.css')}}" rel="stylesheet"> -->
     <!-- <link href="{{asset('assets/css/responsive.css')}}" rel="stylesheet"> -->
@@ -74,6 +78,20 @@
 <script src="{{asset('assets/js/customizer.min.js')}}"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" integrity="sha512-GWzVrcGlo0TxTRvz9ttioyYJ+Wwk9Ck0G81D+eO63BaqHaJ3YZX9wuqjwgfcV/MrB2PhaVX9DkYVhbFpStnqpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<!-- Select2 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+
+<script>
+    
+$("#select1").select2({
+   placeholder: "Interest",
+   allowClear: true
+});
+    
+</script>
+
 <!-- END: Theme JS-->
 <<!-- script src="{{asset('plugins/vendors/jquery/jquery.min.js')}}"></script>
 <script src="{{asset('plugins/vendors/jquery/spartan-multi-image-picker.min.js')}}"></script>

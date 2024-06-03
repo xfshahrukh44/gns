@@ -55,18 +55,17 @@ class ProductController extends Controller
         $model = str_slug('product','-');
         if(auth()->user()->permissions()->where('name','=','view-'.$model)->first()!= null) {
             $keyword = $request->get('search');
-            // $perPage = 25;
+            $perPage = 25;
 			
             if (!empty($keyword)) {
                 $product = Product::where('products.product_title', 'LIKE', "%$keyword%")
 				->leftjoin('categories', 'products.category', '=', 'categories.id')
                 ->orWhere('products.description', 'LIKE', "%$keyword%")
-                ->paginate(10);
+                ->orderBy('products.id', 'desc')
+                ->paginate($perPage);
             } else {
-                $product = Product::paginate(10);
-                // $product = Product::paginate($perPage);
-//                $product = Product::all();
-//                $product = Product::all()->take(20);
+                $product = Product::orderBy('id', 'desc')->paginate($perPage);
+                // $product = Product::orderBy('id', desc)->limit(100)->get();
             }
 
             return view('admin.product.index', compact('product', 'keyword'));
@@ -171,16 +170,19 @@ class ProductController extends Controller
 			$product = new product;
 
             $product->category = $request->input('category'); 
-            $product->subcategory = $request->input('subcategory');
-            $product->childsubcategory = $request->input('childsubcategory'); 
+            // $product->subcategory = $request->input('subcategory');
+            // $product->childsubcategory = $request->input('childsubcategory');
             $product->product_title = $request->input('product_title');      
             $product->is_featured = $request->input('is_featured');
 			$product->sku = $request->input('sku');
 			$product->price = $request->input('price');   
-			$product->maximum_price = $request->input('maximum_price');   
-			$product->tags = $request->input('tags');   
-            $product->description = $request->input('description');   
-            $product->additional_information = $request->input('additional_information');   
+			$product->item_number = $request->input('item_number');
+			$product->unspsc = $request->input('unspsc');
+            $product->manufacturer = $request->input('manufacturer');
+            $product->qty = $request->input('qty');
+            $product->weight = $request->input('weight');
+            $product->description = $request->input('description');
+            $product->additional_information = $request->input('additional_information');
             
             $file = $request->file('image');
             
@@ -299,6 +301,9 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     { 
+
+        // dd($request->all());
+
         $model = str_slug('product','-');
         if(auth()->user()->permissions()->where('name','=','edit-'.$model)->first()!= null) {
             $this->validate($request, [
@@ -311,27 +316,31 @@ class ProductController extends Controller
             $requestData['category'] = $request->input('category');
         }
 
-        if($request->input('subcategory') != "")
-        {
-            $requestData['subcategory'] = $request->input('subcategory');
-        }
+        // if($request->input('subcategory') != "")
+        // {
+        //     $requestData['subcategory'] = $request->input('subcategory');
+        // }
 
 
-        if($request->input('childsubcategory') != "")
-        {
-            $requestData['childsubcategory'] = $request->input('childsubcategory');
-        }
+        // if($request->input('childsubcategory') != "")
+        // {
+        //     $requestData['childsubcategory'] = $request->input('childsubcategory');
+        // }
 
 
         
         $requestData['product_title'] = $request->input('product_title');
+        $requestData['description'] = $request->input('description');  
+		$requestData['price'] = $request->input('price');
         $requestData['is_featured'] = $request->input('is_featured');
         $requestData['description'] = $request->input('description');
         $requestData['additional_information'] = $request->input('additional_information');
 		$requestData['sku'] = $request->input('sku');
-		$requestData['price'] = $request->input('price');
-		$requestData['maximum_price'] = $request->input('maximum_price');
-		$requestData['tags'] = $request->input('tags');
+		$requestData['item_number'] = $request->input('item_number');
+		$requestData['unspsc'] = $request->input('unspsc');
+        $requestData['manufacturer'] = $request->input('manufacturer');
+        $requestData['qty'] = $request->input('qty');
+        $requestData['weight'] = $request->input('weight');
 
 
        

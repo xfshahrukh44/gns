@@ -4,6 +4,21 @@
 
 @section('css')
 
+<style>
+    
+    
+    .main-compilance {
+        text-align: center;
+    }
+    
+    .compliance-img {
+        border: 1px solid black;
+        box-shadow: 0 0px 10px #0000006b;
+        border-radius: 10px; 
+    }
+    
+</style>
+
 @endsection
 
 
@@ -43,22 +58,55 @@
                 <div class="col-lg-4">
                     <div class="size-product">
                         <h2>{{$product->product_title}}</h2>
+                        
+                        @if($product->sku != "")
                         <div class="product-number">
                             <h5>Fastenal Part No. (SKU)</h5>
                             <h6>{{$product->sku}}</h6>
                         </div>
+                        @endif
+                        
+                        
+                        @if($product->item_number != "")
                         <div class="product-number">
                             <h5>Manufacturer Part No.</h5>
                             <h6>{{$product->item_number}}</h6>
                         </div>
+                        @endif
+                        
+                        
+                        @if($product->unspsc != "")
                         <div class="product-number">
                             <h5>UNSPSC</h5>
                             <h6>{{$product->unspsc}}</h6>
                         </div>
+                        @endif
+                        
+                        
+                        @if($product->manufacturer != "")
                         <div class="product-number">
                             <h5>Manufacturer</h5>
                             <h6>{{$product->manufacturer}}</h6>
                         </div>
+                        @endif
+                        
+                        
+                        @if($product->qty != "")
+                        <div class="product-number">
+                            <h5>Product Qty</h5>
+                            <h6>{{$product->qty}}</h6>
+                        </div>
+                        @endif
+                        
+                        
+                        @if($product->weight != "")
+                        <div class="product-number">
+                            <h5>Product Weight</h5>
+                            <h6>{{$product->weight}}</h6>
+                        </div>
+                        @endif
+                        
+                        
 {{--                        <div class="catalog">--}}
 {{--                            <img src="{{asset('images/blue-book.png')}}" class="img-fluid">--}}
 {{--                            <p>This is a Catalog Item</p>--}}

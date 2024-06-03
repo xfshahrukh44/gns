@@ -179,7 +179,14 @@
         }
 
         input {
-            color: black;
+            color: black !important;
+            border: 1px solid #000 !important;
+        }
+
+
+        textarea {
+            color: black !important;
+            border: 1px solid #000 !important;
         }
 
     </style>

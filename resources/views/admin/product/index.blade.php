@@ -26,6 +26,25 @@
     </div>
 </div>
 
+<section class="product-info">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <form method="GET" action="{{ route('product.index') }}">
+                    <ul>
+                        <li>
+                            <input type="text" class="form-control" name='search' placeholder="Search Product" value="{{ Request::get('search') }}">
+                        </li>
+                        <li>
+                            <button type="submit" class="btn btn-primary">Search</button>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section id="configuration">
     <div class="row">
         <div class="col-12">
@@ -45,7 +64,7 @@
                 <div class="card-content collapse show">
                     <div class="card-body card-dashboard">
                         <div class="">
-                            <table class="table table-striped table-bordered zero-configuration" id="myTable">
+                            <table class="table table-striped table-bordered zero-configuration" id="">
                                 <thead>
                                     <tr>
                                         <th>#</th>
@@ -97,6 +116,11 @@
 {{--                                    </tr>--}}
 {{--                                </tfoot>--}}
                             </table>
+                            
+                            <div>
+                                {{ $product->links() }}
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -104,6 +128,18 @@
         </div>
     </div>
 </section>
+<style>
+    section.product-info ul {
+        list-style: none;
+        display: flex;
+        padding: 10px 30px;
+        gap: 10px;
+    }
+    
+    section.product-info ul li input {
+        width: 500px;
+    }
+</style>
 @endsection
 
 @push('js')<!-- ============================================================== -->

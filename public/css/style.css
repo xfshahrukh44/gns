@@ -404,6 +404,11 @@ header .navbar {
   z-index: 0;
   transition: all ease 0.5s;
   cursor: pointer;
+  padding: 0px 0px;
+  box-shadow: 0 0 14px #afafaf;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #7e7e7e;
 }
 
 .product-info img {
@@ -416,7 +421,7 @@ header .navbar {
   position: absolute;
   z-index: 0;
   left: 0;
-  top: 50%;
+  bottom: 6px;
   right: 0;
   text-align: center;
   transition: all ease 0.5s;
@@ -429,30 +434,33 @@ header .navbar {
   top: 0;
   width: 100%;
   height: 100%;
-  background: black;
+  background: white;
   border-radius: 10px;
   transition: all ease 0.5s;
-  opacity: 0.1;
+  opacity: 1;
+  /* border: 1px solid #949494; */
 }
 .animate-blue h6 {
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
-  background: #0d51c0;
+  background: #0d51c0c7;
   display: inline-block;
   border-radius: 8px;
   color: white;
   font-weight: 600;
   text-transform: uppercase;
-  position: absolute;
+  /* position: absolute; */
   z-index: 0;
   transition: all ease 0.5s;
   left: 0;
   right: 0;
-  width: 50%;
+  width: 95%;
   margin: auto;
-  height: 45px;
-  display: flex;
+  height: auto;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  font-size: 13px;
+  padding: 6px 4px;
 }
 .animate-blue a h6 {
   all: unset;
@@ -463,7 +471,7 @@ header .navbar {
   transition: all ease 0.5s;
 }
 .product-category:hover .product-info img {
-  transform: scale(1.1);
+  transform: scale(0.9);
   transition: all ease 0.5s;
 }
 
