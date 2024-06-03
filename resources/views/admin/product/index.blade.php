@@ -77,9 +77,9 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <form action="{{url('admin/product')}}" method="GET">
-                                            <input type="text" class="form-control" name="search" placeholder="Search Product" value="{{$keyword}}">
-                                        </form>
+{{--                                        <form action="{{url('admin/product')}}" method="GET">--}}
+{{--                                            <input type="text" class="form-control" name="search" placeholder="Search Product" value="{{$keyword}}">--}}
+{{--                                        </form>--}}
                                     </tr>
                                     @foreach($product as $item)    
                                     <tr>

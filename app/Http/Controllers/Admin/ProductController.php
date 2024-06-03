@@ -57,17 +57,23 @@ class ProductController extends Controller
             $keyword = $request->get('search');
             $perPage = 25;
 			
-            if (!empty($keyword)) {
-                $product = Product::where('products.product_title', 'LIKE', "%$keyword%")
-				->leftjoin('categories', 'products.category', '=', 'categories.id')
-                ->orWhere('products.description', 'LIKE', "%$keyword%")
-                ->orderBy('products.id', 'desc')
-                ->paginate($perPage);
-            } else {
-                $product = Product::orderBy('id', 'desc')->paginate($perPage);
+//            if (!empty($keyword)) {
+//                $product = Product::where('products.product_title', 'LIKE', "%$keyword%")
+//				->leftjoin('categories', 'products.category', '=', 'categories.id')
+//                ->orWhere('products.description', 'LIKE', "%$keyword%")
+//                ->orderBy('products.id', 'desc')
+//                ->paginate($perPage);
+//            } else {
+                $product = Product::orderBy('id', 'desc')
+                    ->when(!empty($keyword), function ($q) use ($keyword) {
+                        return $q->where('product_title', 'LIKE', "%$keyword%")
+                            ->orWhere('description', 'LIKE', "%$keyword%");
+                    })
+                    ->paginate($perPage);
                 // $product = Product::orderBy('id', desc)->limit(100)->get();
-            }
+//            }
 
+//            dd($product);
             return view('admin.product.index', compact('product', 'keyword'));
         }
         return response(view('403'), 403);
