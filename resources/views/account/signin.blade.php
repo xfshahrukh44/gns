@@ -27,12 +27,12 @@
 
 
 
-<section class="heading-sec">
+<section class="inner-banner">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
-                <div class="inner-headings">
-                    <h2> USER ACCOUNT SECTION </h2>
+            <div class="col-lg-12 col-md-12 col-12">
+                <div class="about-banner">
+                    <h1> USER ACCOUNT SECTION </h1>
                 </div>
             </div>
         </div>
@@ -100,7 +100,7 @@
                     @endif
                 </div> -->
 
-                <button class="btn proceed_button3" type="submit">Sign Up</button>
+                <button class="btn proceed_button3 text-white" style="background: #e01c1e;" type="submit">Sign Up</button>
                 
                 </form>
                 </div>
@@ -132,7 +132,7 @@
                     <!-- <label class="remember"><input type="checkbox"> Remember me </label> -->
                     <!-- <a href="{{ url('password/reset') }}" class="pull-right forg_text"> Forgot password? </a> -->
                 <!-- </div> -->
-                <button class="btn proceed_button3" type="submit">Login</button>
+                <button class="btn proceed_button3 text-white" style="background: #e01c1e;" type="submit">Login</button>
                 <!-- <span>or</span>
                 <div class="social-group">
                     <button class="loginBtn loginBtn--facebook">Login with Facebook</button>

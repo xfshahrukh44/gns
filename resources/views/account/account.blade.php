@@ -6,12 +6,12 @@
 
 
 
-<section class="heading-sec">
+<section class="inner-banner">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
-                <div class="inner-headings">
-                    <h2> PROFILE UPDATE </h2>
+            <div class="col-lg-12 col-md-12 col-12">
+                <div class="about-banner">
+                    <h1> PROFILE UPDATE </h1>
                 </div>
             </div>
         </div>
