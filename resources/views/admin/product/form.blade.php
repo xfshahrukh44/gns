@@ -77,6 +77,17 @@
         </div>
 
 
+        <div class="col-md-12">
+            <div class="form-group">
+               {!! Form::label('is_featured', 'Featured') !!}
+                <select name="is_featured" id="" class="form-control">
+                    <option value="0" {!! isset($product) && $product->is_featured == '0' ? 'selected' : '' !!}>No</option>
+                    <option value="1" {!! isset($product) && $product->is_featured == '1' ? 'selected' : '' !!}>Yes</option>
+                </select>
+            </div>
+        </div>
+
+
 
 
         <div class="col-md-12">
@@ -85,7 +96,7 @@
                 {!! Form::text('price', null, ('required' == 'required') ? ['class' => 'form-control', 'required' => 'required'] : ['class' => 'form-control']) !!}
             </div>
         </div>
-        
+
         
         <div class="col-md-12">
             <div class="form-group">

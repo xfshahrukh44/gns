@@ -26,8 +26,12 @@ class FrontController extends Controller
 {
     public function index()
     {
+        $shop_by_categories = Category::with('parent', 'children')
+            ->where('parent_id', '!=', 0)
+            ->inRandomOrder()->get()->take(4);
 
-//        $popular_books = Book::all()->take(6);
+        $featured_products = Product::where('is_featured', 1)
+            ->inRandomOrder()->get()->take(8);
 //        $page = Page::find(1);
 //        $section = DB::table('section')->where('page_id', 1)->get();
 //        $banner = DB::table('banners')->get();
@@ -37,7 +41,7 @@ class FrontController extends Controller
 //        $get_product = DB::table('products')->where('status', '1')->take(6)->get();
 //
 //        return view('welcome', compact('page', 'section', 'banner', 'blog', 'instagram', 'get_product', 'popular_books'));
-        return view('welcome');
+        return view('welcome', compact('shop_by_categories', 'featured_products'));
 
     }
 
@@ -129,32 +133,32 @@ class FrontController extends Controller
             return $q->where('product_title', 'LIKE', '%'.$filters['title'].'%');
         })->when($filters['category_id'], function ($q) use ($filters) {
             return $q->where('category', $filters['category_id'])
-                        ->orWhere(function ($q) use ($filters) {
-                            return $q->whereHas('categorys', function ($q) use ($filters) {
-                                return $q->where('parent_id', $filters['category_id'])
+                    ->orWhere(function ($q) use ($filters) {
+                        return $q->whereHas('categorys', function ($q) use ($filters) {
+                            return $q->where('parent_id', $filters['category_id'])
                                     ->orWhere(function ($q) use ($filters) {
                                         return $q->whereHas('parent', function ($q) use ($filters) {
                                             return $q->where('parent_id', $filters['category_id'])
-                                                ->orWhere(function ($q) use ($filters) {
-                                                    return $q->whereHas('parent', function ($q) use ($filters) {
-                                                        return $q->where('parent_id', $filters['category_id'])
-                                                            ->orWhere(function ($q) use ($filters) {
-                                                                return $q->whereHas('parent', function ($q) use ($filters) {
-                                                                    return $q->where('parent_id', $filters['category_id'])
-                                                                        ->orWhere(function ($q) use ($filters) {
-                                                                            return $q->whereHas('parent', function ($q) use ($filters) {
-                                                                                return $q->where('parent_id', $filters['category_id']);
-                                                                            });
+                                                    ->orWhere(function ($q) use ($filters) {
+                                                        return $q->whereHas('parent', function ($q) use ($filters) {
+                                                            return $q->where('parent_id', $filters['category_id'])
+                                                                    ->orWhere(function ($q) use ($filters) {
+                                                                        return $q->whereHas('parent', function ($q) use ($filters) {
+                                                                            return $q->where('parent_id', $filters['category_id'])
+                                                                                    ->orWhere(function ($q) use ($filters) {
+                                                                                        return $q->whereHas('parent', function ($q) use ($filters) {
+                                                                                            return $q->where('parent_id', $filters['category_id']);
+                                                                                        });
+                                                                                    });
                                                                         });
-                                                                });
-                                                            });
+                                                                    });
+                                                        });
                                                     });
-                                                });
                                         });
                                     });
-                            });
                         });
-        })->paginate(16);
+                    });
+        })->paginate(100);
 
         return view('shop', compact('products', 'filters', 'categories', 'category_tree_ids'));
     }

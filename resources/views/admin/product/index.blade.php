@@ -57,6 +57,11 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <tr>
+                                        <form action="{{url('admin/product')}}" method="GET">
+                                            <input type="text" class="form-control" name="search" placeholder="Search Product" value="{{$keyword}}">
+                                        </form>
+                                    </tr>
                                     @foreach($product as $item)    
                                     <tr>
                                         <td>{{ $item->id }}</td>
@@ -78,18 +83,19 @@
                                             </a>
                                         </td>
                                     </tr>
-                                    @endforeach  
+                                    @endforeach
                                 </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Product Title</th>
-                                        <th>Product Price</th>
-                                        <th>Product Category</th>
-                                        <th>Product Image</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </tfoot>
+                                {{$product->appends(request()->input())->links()}}
+{{--                                <tfoot>--}}
+{{--                                    <tr>--}}
+{{--                                        <th>#</th>--}}
+{{--                                        <th>Product Title</th>--}}
+{{--                                        <th>Product Price</th>--}}
+{{--                                        <th>Product Category</th>--}}
+{{--                                        <th>Product Image</th>--}}
+{{--                                        <th>Actions</th>--}}
+{{--                                    </tr>--}}
+{{--                                </tfoot>--}}
                             </table>
                         </div>
                     </div>
@@ -103,34 +109,34 @@
 @push('js')<!-- ============================================================== -->
 <script src="{{asset('plugins/components/datatables/jquery.dataTables.min.js')}}"></script>
 
-<script>
-    $(function () {
-        $('#myTable').DataTable();
-        var table = $('#example').DataTable({
-            "columnDefs": [{
-                "visible": false,
-                "targets": 2
-            }],
-            "order": [
-                [2, 'asc']
-            ],
-            "displayLength": 18,
-            "drawCallback": function (settings) {
-                var api = this.api();
-                var rows = api.rows({
-                    page: 'current'
-                }).nodes();
-                var last = null;
-                api.column(2, {
-                    page: 'current'
-                }).data().each(function (group, i) {
-                    if (last !== group) {
-                        $(rows).eq(i).before('<tr class="group"><td colspan="5">' + group + '</td></tr>');
-                        last = group;
-                    }
-                });
-            }
-        });
-    });
-</script>
+{{--<script>--}}
+{{--    $(function () {--}}
+{{--        $('#myTable').DataTable();--}}
+{{--        var table = $('#example').DataTable({--}}
+{{--            "columnDefs": [{--}}
+{{--                "visible": false,--}}
+{{--                "targets": 2--}}
+{{--            }],--}}
+{{--            "order": [--}}
+{{--                [2, 'asc']--}}
+{{--            ],--}}
+{{--            "displayLength": 18,--}}
+{{--            "drawCallback": function (settings) {--}}
+{{--                var api = this.api();--}}
+{{--                var rows = api.rows({--}}
+{{--                    page: 'current'--}}
+{{--                }).nodes();--}}
+{{--                var last = null;--}}
+{{--                api.column(2, {--}}
+{{--                    page: 'current'--}}
+{{--                }).data().each(function (group, i) {--}}
+{{--                    if (last !== group) {--}}
+{{--                        $(rows).eq(i).before('<tr class="group"><td colspan="5">' + group + '</td></tr>');--}}
+{{--                        last = group;--}}
+{{--                    }--}}
+{{--                });--}}
+{{--            }--}}
+{{--        });--}}
+{{--    });--}}
+{{--</script>--}}
 @endpush

@@ -82,84 +82,23 @@
                 </div>
                 <div class="col-lg-12 col-md-12 col-12">
                     <div class="product-slides owl-carousel owl-theme">
-                        <div class="item">
-                            <div class="product-category">
-                                <div class="product-info">
-                                    <img src="{{asset('images/01-6.jpg')}}" class="img-fluid" alt="">
+                        @foreach($shop_by_categories as $shop_by_category)
+                            <a href="{{route('front.shop', ['category_id' => $shop_by_category->id])}}">
+                                <div class="item">
+                                    <div class="product-category">
+                                        <div class="product-info">
+                                            <img src="{{asset( $shop_by_category->image ?? 'images/noimg.png' )}}" class="img-fluid" alt="">
+                                        </div>
+                                        <div class="animate-blue">
+                                            <h6>{{$shop_by_category->name}} </h6>
+    {{--                                        <a href="#">--}}
+    {{--                                            <h6>3 products</h6>--}}
+    {{--                                        </a>--}}
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="animate-blue">
-                                    <h6>Aerosol </h6>
-                                    <a href="#">
-                                        <h6>3 products</h6>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="product-category">
-                                <div class="product-info">
-                                    <img src="{{asset('images/c4.png')}}" class="img-fluid" alt="">
-                                </div>
-                                <div class="animate-blue">
-                                    <h6>Bolts </h6>
-                                    <a href="#">
-                                        <h6>1 products</h6>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="product-category">
-                                <div class="product-info">
-                                    <img src="{{asset('images/4.jpg')}}" class="img-fluid" alt="">
-                                </div>
-                                <div class="animate-blue">
-                                    <h6>Cutting Tools </h6>
-                                    <a href="#">
-                                        <h6>1 products</h6>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="product-category">
-                                <div class="product-info">
-                                    <img src="{{asset('images/c1.png')}}" class="img-fluid" alt="">
-                                </div>
-                                <div class="animate-blue">
-                                    <h6>Dot fittings </h6>
-                                    <a href="#">
-                                        <h6>1 products</h6>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="product-category">
-                                <div class="product-info">
-                                    <img src="{{asset('images/5.jpg')}}" class="img-fluid" alt="">
-                                </div>
-                                <div class="animate-blue">
-                                    <h6>Electrical </h6>
-                                    <a href="#">
-                                        <h6>2 products</h6>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="product-category">
-                                <div class="product-info">
-                                    <img src="{{asset('images/c3.png')}}" class="img-fluid" alt="">
-                                </div>
-                                <div class="animate-blue">
-                                    <h6>Nuts </h6>
-                                    <a href="#">
-                                        <h6>1 products</h6>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                            </a>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -175,294 +114,25 @@
                         <h2>FEATURED PRODUCTS</h2>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-3 col-6">
-                    <div class="featured-pro-info">
-                        <div class="featured-side-icon">
-                            <ul class="hover-icon">
-                                <li>
-                                    <a href="{{route('front.compare')}}">
-                                        <span>Compare</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span>Quick view</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{route('front.wishlist')}}">
-                                        <span>Add to wishlist</span>
-                                    </a>
-                                </li>
-                            </ul>
-                            <div class="cart-product">
-                                <a href="#">
-                                    <img src="{{asset('images/p1-1.png')}}" class="img-fluid" alt="">
-                                </a>
-                            </div>
-                            <div class="add-pro-info">
-                                <a href="#" class="btn cart-red"><span>ADD TO CART</span></a>
-                                <a href="#" class="btn cart-blue"><span class="cart-icon"></span></a>
+                @foreach($featured_products as $featured_product)
+                    <a href="{{route('front.productDetail', $featured_product->id)}}">
+                        <div class="col-lg-3 col-md-3 col-6">
+                            <div class="featured-pro-info">
+                                <div class="featured-side-icon">
+                                    <div class="cart-product">
+                                        <a href="{{route('front.productDetail', $featured_product->id)}}">
+                                            <img src="{{file_get_contents($featured_product->image) ? asset($featured_product->image) : asset('images/noimg.png')}}" class="img-fluid" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="discription-pro">
+                                    <a href="{{route('front.productDetail', $featured_product->id)}}">{{$featured_product->product_title}}</a>
+                                    <span>${{$featured_product->price}}</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="discription-pro">
-                            <a href="#">PRODUCT 1</a>
-                            <span>$50.00</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-6">
-                    <div class="featured-pro-info">
-                        <div class="featured-side-icon">
-                            <ul class="hover-icon">
-                                <li>
-                                    <a href="#">
-                                        <span>Compare</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span>Quick view</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span>Add to wishlist</span>
-                                    </a>
-                                </li>
-                            </ul>
-                            <div class="cart-product">
-                                <a href="#">
-                                    <img src="{{asset('images/p2.png')}}" class="img-fluid" alt="">
-                                </a>
-                            </div>
-                            <div class="add-pro-info">
-                                <a href="#" class="btn cart-red"><span>ADD TO CART</span></a>
-                                <a href="#" class="btn cart-blue"><span class="cart-icon"></span></a>
-                            </div>
-                        </div>
-                        <div class="discription-pro">
-                            <a href="#">PRODUCT 2</a>
-                            <span>$50.00</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-6">
-                    <div class="featured-pro-info">
-                        <div class="featured-side-icon">
-                            <ul class="hover-icon">
-                                <li>
-                                    <a href="#">
-                                        <span>Compare</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span>Quick view</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span>Add to wishlist</span>
-                                    </a>
-                                </li>
-                            </ul>
-                            <div class="cart-product">
-                                <a href="#">
-                                    <img src="{{asset('images/p3.png')}}" class="img-fluid" alt="">
-                                </a>
-                            </div>
-                            <div class="add-pro-info">
-                                <a href="#" class="btn cart-red"><span>ADD TO CART</span></a>
-                                <a href="#" class="btn cart-blue"><span class="cart-icon"></span></a>
-                            </div>
-                        </div>
-                        <div class="discription-pro">
-                            <a href="#">PRODUCT 3</a>
-                            <span>$50.00</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-6">
-                    <div class="featured-pro-info">
-                        <div class="featured-side-icon">
-                            <ul class="hover-icon">
-                                <li>
-                                    <a href="#">
-                                        <span>Compare</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span>Quick view</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span>Add to wishlist</span>
-                                    </a>
-                                </li>
-                            </ul>
-                            <div class="cart-product">
-                                <a href="#">
-                                    <img src="{{asset('images/p4.jpg')}}" class="img-fluid" alt="">
-                                </a>
-                            </div>
-                            <div class="add-pro-info">
-                                <a href="#" class="btn cart-red"><span>ADD TO CART</span></a>
-                                <a href="#" class="btn cart-blue"><span class="cart-icon"></span></a>
-                            </div>
-                        </div>
-                        <div class="discription-pro">
-                            <a href="#">PRODUCT 1</a>
-                            <span>$50.00</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-6">
-                    <div class="featured-pro-info">
-                        <div class="featured-side-icon">
-                            <ul class="hover-icon">
-                                <li>
-                                    <a href="#">
-                                        <span>Compare</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span>Quick view</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span>Add to wishlist</span>
-                                    </a>
-                                </li>
-                            </ul>
-                            <div class="cart-product">
-                                <a href="#">
-                                    <img src="{{asset('images/p4.png')}}" class="img-fluid" alt="">
-                                </a>
-                            </div>
-                            <div class="add-pro-info">
-                                <a href="#" class="btn cart-red"><span>ADD TO CART</span></a>
-                                <a href="#" class="btn cart-blue"><span class="cart-icon"></span></a>
-                            </div>
-                        </div>
-                        <div class="discription-pro">
-                            <a href="#">PRODUCT 5</a>
-                            <span>$50.00</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-6">
-                    <div class="featured-pro-info">
-                        <div class="featured-side-icon">
-                            <ul class="hover-icon">
-                                <li>
-                                    <a href="#">
-                                        <span>Compare</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span>Quick view</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span>Add to wishlist</span>
-                                    </a>
-                                </li>
-                            </ul>
-                            <div class="cart-product">
-                                <a href="#">
-                                    <img src="{{asset('images/p6.jpg')}}" class="img-fluid" alt="">
-                                </a>
-                            </div>
-                            <div class="add-pro-info">
-                                <a href="#" class="btn cart-red"><span>ADD TO CART</span></a>
-                                <a href="#" class="btn cart-blue"><span class="cart-icon"></span></a>
-                            </div>
-                        </div>
-                        <div class="discription-pro">
-                            <a href="#">PRODUCT 6</a>
-                            <span>$50.00</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-6">
-                    <div class="featured-pro-info">
-                        <div class="featured-side-icon">
-                            <ul class="hover-icon">
-                                <li>
-                                    <a href="#">
-                                        <span>Compare</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span>Quick view</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span>Add to wishlist</span>
-                                    </a>
-                                </li>
-                            </ul>
-                            <div class="cart-product">
-                                <a href="#">
-                                    <img src="{{asset('images/p7.jpg')}}" class="img-fluid" alt="">
-                                </a>
-                            </div>
-                            <div class="add-pro-info">
-                                <a href="#" class="btn cart-red"><span>ADD TO CART</span></a>
-                                <a href="#" class="btn cart-blue"><span class="cart-icon"></span></a>
-                            </div>
-                        </div>
-                        <div class="discription-pro">
-                            <a href="#">PRODUCT 7</a>
-                            <span>$50.00</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-6">
-                    <div class="featured-pro-info">
-                        <div class="featured-side-icon">
-                            <ul class="hover-icon">
-                                <li>
-                                    <a href="#">
-                                        <span>Compare</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span>Quick view</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span>Add to wishlist</span>
-                                    </a>
-                                </li>
-                            </ul>
-                            <div class="cart-product">
-                                <a href="#">
-                                    <img src="{{asset('images/p5.png')}}" class="img-fluid" alt="">
-                                </a>
-                            </div>
-                            <div class="add-pro-info">
-                                <a href="#" class="btn cart-red"><span>ADD TO CART</span></a>
-                                <a href="#" class="btn cart-blue"><span class="cart-icon"></span></a>
-                            </div>
-                        </div>
-                        <div class="discription-pro">
-                            <a href="#">PRODUCT 8</a>
-                            <span>$50.00</span>
-                        </div>
-                    </div>
-                </div>
+                    </a>
+                @endforeach
             </div>
         </div>
     </section>

@@ -61,13 +61,15 @@ class ProductController extends Controller
                 $product = Product::where('products.product_title', 'LIKE', "%$keyword%")
 				->leftjoin('categories', 'products.category', '=', 'categories.id')
                 ->orWhere('products.description', 'LIKE', "%$keyword%")
-                ->paginate($perPage);
+                ->paginate(10);
             } else {
+                $product = Product::paginate(10);
                 // $product = Product::paginate($perPage);
-                $product = Product::all();
+//                $product = Product::all();
+//                $product = Product::all()->take(20);
             }
 
-            return view('admin.product.index', compact('product'));
+            return view('admin.product.index', compact('product', 'keyword'));
         }
         return response(view('403'), 403);
 
@@ -169,10 +171,11 @@ class ProductController extends Controller
 			$product = new product;
 
             $product->category = $request->input('category'); 
-            $product->subcategory = $request->input('subcategory'); 
+            $product->subcategory = $request->input('subcategory');
             $product->childsubcategory = $request->input('childsubcategory'); 
             $product->product_title = $request->input('product_title');      
-			$product->sku = $request->input('sku');     
+            $product->is_featured = $request->input('is_featured');
+			$product->sku = $request->input('sku');
 			$product->price = $request->input('price');   
 			$product->maximum_price = $request->input('maximum_price');   
 			$product->tags = $request->input('tags');   
@@ -322,7 +325,8 @@ class ProductController extends Controller
 
         
         $requestData['product_title'] = $request->input('product_title');
-        $requestData['description'] = $request->input('description');  
+        $requestData['is_featured'] = $request->input('is_featured');
+        $requestData['description'] = $request->input('description');
         $requestData['additional_information'] = $request->input('additional_information');
 		$requestData['sku'] = $request->input('sku');
 		$requestData['price'] = $request->input('price');
