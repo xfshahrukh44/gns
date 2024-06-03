@@ -47,7 +47,7 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Category</th>
+                                        <!--<th>Category</th>-->
                                         <th>Subcategory</th>
                                         <!-- <th>Image</th> -->
                                         <th>Actions</th>
@@ -57,7 +57,7 @@
                                     @foreach($subcategory as $item)
                                     <tr>
                                     <td>{{ $item->id }}</td>
-                                    <td>{{ App\Category::find($item->category)->name }}</td>
+                                    <!--<td>{{App\Category::find($item->category)->name }}</td>-->
                                     <td>{{ $item->subcategory }}</td>
                                     <!-- <td>{{ $item->image }}</td> -->
                                     <td>
@@ -92,7 +92,7 @@
                                 <tfoot>
                                     <tr>
                                         <th>#</th>
-                                        <th>Category</th>
+                                        <!--<th>Category</th>-->
                                         <th>Subcategory</th>
                                         <!-- <th>Image</th> -->
                                         <th>Actions</th>

@@ -34,10 +34,20 @@ class FrontController extends Controller
 //        $blog = DB::table('blogs')->get();
 //        $instagram = DB::table('instagrams')->take(5)->get();
 //
-//        $get_product = DB::table('products')->where('status', '1')->take(6)->get();
+        $get_product = Product::where('status', '1')
+            ->inRandomOrder()
+            ->take(6)
+            ->with('categorys')
+            ->get();
+        
+        $featured_product = Product::where('status', '1')
+            ->take(8)
+            ->get();
+
 //
 //        return view('welcome', compact('page', 'section', 'banner', 'blog', 'instagram', 'get_product', 'popular_books'));
-        return view('welcome');
+        $categories = Category::where('parent_id', 0)->get();
+        return view('welcome', compact('categories', 'get_product', 'featured_product'));
 
     }
 
@@ -154,9 +164,11 @@ class FrontController extends Controller
                                     });
                             });
                         });
-        })->paginate(16);
+        })->paginate(18);
+        
+        $latest_product = Product::orderBy('id', 'DESC')->limit(3)->get();
 
-        return view('shop', compact('products', 'filters', 'categories', 'category_tree_ids'));
+        return view('shop', compact('products', 'filters', 'categories', 'category_tree_ids', 'latest_product'));
     }
 
     public function wishlist()

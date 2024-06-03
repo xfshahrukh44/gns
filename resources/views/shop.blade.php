@@ -4,6 +4,32 @@
 
 @section('css')
 
+<style>
+    
+.featured-side-icon {
+    position: relative !important;
+    z-index: 0 !important;
+    transition: all ease 0.5s !important;
+    cursor: pointer !important;
+    padding: 0px 0px !important;
+    box-shadow: 0 0 14px #afafaf !important;
+    border-radius: 14px !important;
+    overflow: hidden !important;
+    border: 1px solid #7e7e7e !important;
+}
+
+
+.cart-product {
+    height: auto !important;
+    border-radius: 0 !important;
+    object-fit: cover !important;
+    width: 100% !important;
+    filter: saturate(1) !important;
+    transform: scale(0.8) !important;
+}
+    
+</style>
+
 @endsection
 
 
@@ -27,46 +53,56 @@
             <div class="row">
                 <div class="col-lg-3 col-md-3 col-12">
                     <div class="stock-category">
-                        <div class="print-product">
-                            <h3>STOCK STATUS</h3>
-                            <div class="check-side">
-                                <div class="checkbox-info">
-                                    <input type="checkbox" name="" id="">
-                                    <label>On sale</label>
-                                </div>
-                                <div class="checkbox-info">
-                                    <input type="checkbox" name="" id="">
-                                    <label>In stock</label>
-                                </div>
-                            </div>
-                        </div>
+                        <!--<div class="print-product">-->
+                        <!--    <h3>STOCK STATUS</h3>-->
+                        <!--    <div class="check-side">-->
+                        <!--        <div class="checkbox-info">-->
+                        <!--            <input type="checkbox" name="" id="">-->
+                        <!--            <label>On sale</label>-->
+                        <!--        </div>-->
+                        <!--        <div class="checkbox-info">-->
+                        <!--            <input type="checkbox" name="" id="">-->
+                        <!--            <label>In stock</label>-->
+                        <!--        </div>-->
+                        <!--    </div>-->
+                        <!--</div>-->
                         <div class="print-product">
                             <h3>TOP RATED PRODUCTS</h3>
                             <div class="pro-price">
-                                <a href="#">
+                                @foreach($latest_product as $val)
+                                <a href="{{ route('front.productDetail', ['id' => $val->id]) }}">
                                     <figure>
-                                        <img src="{{asset('images/p7-430x493.jpg')}}" class="img-fluid" alt="">
+                                        <img src="{{ url($val->image) }}" class="img-fluid" alt="">
                                     </figure>
                                     <div class="pro-price_info">
-                                        <h5>Product 7 <span>50.00</span></h5>
+                                        <h5>{{ $val->product_title }} <span>{{ $val->price }}</span></h5>
                                     </div>
                                 </a>
-                                <a href="#">
-                                    <figure>
-                                        <img src="{{asset('images/p6-430x493.jpg')}}" class="img-fluid" alt="">
-                                    </figure>
-                                    <div class="pro-price_info">
-                                        <h5>Product 6 <span>50.00</span></h5>
-                                    </div>
-                                </a>
-                                <a href="#">
-                                    <figure>
-                                        <img src="{{asset('images/p4-430x493.png')}}" class="img-fluid" alt="">
-                                    </figure>
-                                    <div class="pro-price_info">
-                                        <h5>Product 5 <span>50.00</span></h5>
-                                    </div>
-                                </a>
+                                @endforeach
+                                <!--<a href="#">-->
+                                <!--    <figure>-->
+                                <!--        <img src="{{asset('images/p7-430x493.jpg')}}" class="img-fluid" alt="">-->
+                                <!--    </figure>-->
+                                <!--    <div class="pro-price_info">-->
+                                <!--        <h5>Product 7 <span>50.00</span></h5>-->
+                                <!--    </div>-->
+                                <!--</a>-->
+                                <!--<a href="#">-->
+                                <!--    <figure>-->
+                                <!--        <img src="{{asset('images/p6-430x493.jpg')}}" class="img-fluid" alt="">-->
+                                <!--    </figure>-->
+                                <!--    <div class="pro-price_info">-->
+                                <!--        <h5>Product 6 <span>50.00</span></h5>-->
+                                <!--    </div>-->
+                                <!--</a>-->
+                                <!--<a href="#">-->
+                                <!--    <figure>-->
+                                <!--        <img src="{{asset('images/p4-430x493.png')}}" class="img-fluid" alt="">-->
+                                <!--    </figure>-->
+                                <!--    <div class="pro-price_info">-->
+                                <!--        <h5>Product 5 <span>50.00</span></h5>-->
+                                <!--    </div>-->
+                                <!--</a>-->
                             </div>
                         </div>
                     </div>
@@ -170,7 +206,7 @@
                         <div class="col-lg-12 col-md-12 col-12">
                             <div class="row">
                                 @foreach($products as $product)
-                                    <div class="col-lg-3 col-md-3 col-6">
+                                    <div class="col-lg-2 col-md-2 col-6">
                                         <div class="featured-pro-info">
                                             <div class="featured-side-icon">
 {{--                                                <ul class="hover-icon">--}}

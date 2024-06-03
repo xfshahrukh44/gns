@@ -129,7 +129,7 @@
 {{--                                an issue or indoors.</p>--}}
 {{--                        </div>--}}
 {{--                    </div>--}}
-                    <table class="table table-responsive">
+                    <table class="table" style="width:100% !imprtant">
                         <thead>
                             <tr>
                                 <?php $used_keys = []; ?>
@@ -140,6 +140,8 @@
                                 <th> Item number </th>
                                 <th>SKU </th>
                                 <th> Price</th>
+                                <th> Qty</th>
+                                <th> Weight</th>
                                 <th> Action</th>
                             </tr>
                         </thead>
@@ -155,6 +157,12 @@
                                         {{$product->sku ?? 'N/A'}}
                                     </td>
                                     <td>{{('$' . $product->price) ?? 'N/A'}}</td>
+                                    
+                                    <td>{{( $product->qty) ?? 'N/A'}}</td>
+                                    
+                                    <td>{{( $product->weight) ?? 'N/A'}}</td>
+                                    
+                                    
                                     <td>
                                         <a class="btn btn-sm btn-primary text-white" style="background: #e01c1e; border: 0px;" href="{{route('front.productDetail', $product->id)}}">
                                             BUY

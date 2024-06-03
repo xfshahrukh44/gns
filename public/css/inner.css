@@ -52,8 +52,12 @@
 /* category-pg  css start */
 
 .category-pg .product-info img {
-  height: 250px;
+  height: auto;
   border-radius: 0;
+  object-fit: cover;
+  width: 100%;
+  filter: saturate(1);
+  transform: scale(0.8);
 }
 
 .category-pg .product-category {
@@ -426,9 +430,20 @@
 /* shop details page css start */
 
 .top-discription {
-  display: flex;
+  display: inline-flex;
   align-items: start;
   gap: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px 10px;
+  border: 1px solid #00000096;
+  box-shadow: 0 0 8px #45454552;
+  border-radius: 8px;
+  width: 210px;
+  flex-wrap: wrap;
+  height: auto;
 }
 
 .steel-nuts figure img {
@@ -441,6 +456,7 @@
   font-size: 13px;
   text-align: center;
   margin-bottom: 10px;
+  display: inline-block;
 }
 
 .steel-nuts-inf0 h3 {
@@ -576,7 +592,7 @@
 }
 
 h3.inner-product-heading {
-  background-color: #95aabb;
+  background-color: #00599c;
   color: white;
   margin-top: 20px;
   font-size: 16px;
@@ -750,4 +766,21 @@ h2.bluee {
 .quantity-inner i {
   margin-right: 7px;
 }
+.table-right {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.main-compilance {
+    text-align: center;
+}
+
+.compliance-img {
+    border: 1px solid black;
+    box-shadow: 0 0px 10px #0000006b;
+    border-radius: 10px;
+}
+
 /* inner-product page css end */

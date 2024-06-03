@@ -3,7 +3,7 @@
 
 <?php 
 
-$category = DB::table('categories')->get();
+    $category = DB::table('categories')->get();
 
 ?>
 
@@ -18,6 +18,7 @@ $category = DB::table('categories')->get();
     </div>
 </div>
 
+
 <div class="col-md-12">
     <div class="form-group">
     	{!! Form::label('subcategory', 'Subcategory') !!}
@@ -26,12 +27,14 @@ $category = DB::table('categories')->get();
 </div>
 
 
-<!-- <div class="col-md-12">
+<!-- 
+<div class="col-md-12">
     <div class="form-group">
     	{!! Form::label('image', 'Image') !!}
-    	    	{!! Form::text('image', null, ('' == 'required') ? ['class' => 'form-control', 'required' => 'required'] : ['class' => 'form-control']) !!}
+    	{!! Form::text('image', null, ('' == 'required') ? ['class' => 'form-control', 'required' => 'required'] : ['class' => 'form-control']) !!}
     </div>
-</div> -->
+</div> 
+-->
 
 
 	</div>

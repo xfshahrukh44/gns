@@ -38,30 +38,40 @@
                 </div>
                 <div class="col-lg-6 col-md-6 col-12">
                     <div class="store-printing">
-                        <form>
+                       <form class="form_submission" action="{{ route('contactUsSubmit') }}" id="contactform" method="post">
+                        
+                        @csrf 
+                        
                             <div class="row">
                                 <div class="form-group col-12">
                                     <label>Your name</label>
-                                    <input type="text" name=" name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                                    <input type="text" name="fname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" required>
+                                </div>
+                                <div class="form-group col-12">
+                                    <label>Your name</label>
+                                    <input type="text" name="lname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" required>
                                 </div>
                                 <div class="form-group col-12">
                                     <label>Your email</label>
-                                    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                                    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" required>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group col-12">
                                     <label>Subject</label>
-                                    <input type="text" name="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                                    <input type="text" name="phone" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" required>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label> Your message (optional)</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Message (optional)"> </textarea>
+                                <textarea name="notes" class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Message (optional)" required> </textarea>
                             </div>
                             <button type="submit" class="blue-btn btn golden-btn">Submit</button>
                         </form>
                     </div>
+                    
+                    <div id="contactformsresult">  </div>
+                    
                 </div>
             </div>
         </div>

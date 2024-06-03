@@ -1,15 +1,17 @@
 
 <div class="form-body">
     <div class="row">
-
+        
+        
+        <?php $get_categories = DB::table('categories')->pluck('id');?>
     
         <div class="col-md-12">
             <div class="form-group">
                {!! Form::Label('category', 'Select Category:') !!}
-               <select name="category" class="form-control" id="category">
+               <select name="category" class="form-control" id="select1">
                     <option value="0"> Select Category </option>
                     @foreach($items as $key => $val_items)
-                    <option value="{{ $val_items->id }}"> {{ $val_items->name }} </option>
+                        <option value="{{ $val_items->id }}" > {{ $val_items->name }} </option>
                     @endforeach
                </select>
             </div>
@@ -17,56 +19,56 @@
 
 
 
-        <div class="col-md-12" id="subcategory_sec" >
-            <div class="form-group">
-               {!! Form::Label('item', 'Select Sub-Category:') !!}
-               <select name="subcategory" id="subcategory" class="form-control">
+        <!--<div class="col-md-12" id="subcategory_sec" >-->
+        <!--    <div class="form-group">-->
+        <!--       {!! Form::Label('item', 'Select Sub-Category:') !!}-->
+        <!--       <select name="subcategory" id="subcategory" class="form-control">-->
                     
-               </select>
-            </div>
-        </div>
+        <!--       </select>-->
+        <!--    </div>-->
+        <!--</div>-->
 
 
 
 
-        <div class="col-md-12" id="childsubcategory_sec" >
-            <div class="form-group">
-               {!! Form::Label('item', 'Select Child Sub-Category:') !!}
-               <select name="childsubcategory" id="childsubcategory" class="form-control">
+        <!--<div class="col-md-12" id="childsubcategory_sec" >-->
+        <!--    <div class="form-group">-->
+        <!--       {!! Form::Label('item', 'Select Child Sub-Category:') !!}-->
+        <!--       <select name="childsubcategory" id="childsubcategory" class="form-control">-->
                     
-               </select>
-            </div>
-        </div>
+        <!--       </select>-->
+        <!--    </div>-->
+        <!--</div>-->
 
 
 
-        <div class="row" style="margin-left: 0;">
+        <!--<div class="row" style="margin-left: 0;">-->
             
-            <div class="col-md-4">
-                <div class="form-group">
-                <label> Category </label>
-                <input type="text" value="{{ App\Category::find($product->category)->name }}" class="form-control" readonly/>
-                </div>
-            </div>
+        <!--    <div class="col-md-4">-->
+        <!--        <div class="form-group">-->
+        <!--        <label> Category </label>-->
+        <!--        <input type="text" value="{{ App\Category::find($product->category)->name }}" class="form-control" readonly/>-->
+        <!--        </div>-->
+        <!--    </div>-->
        
 
-            <div class="col-md-4">
-                <div class="form-group">
-                <label> Sub-Category </label>
-                <input type="text" value="{{ App\Models\Subcategory::find($product->subcategory)->subcategory }}" class="form-control" readonly/>
-                </div>
-            </div>
+        <!--    <div class="col-md-4">-->
+        <!--        <div class="form-group">-->
+        <!--        <label> Sub-Category </label>-->
+        <!--        <input type="text" value="{{ App\Models\Subcategory::find($product->subcategory)->subcategory }}" class="form-control" readonly/>-->
+        <!--        </div>-->
+        <!--    </div>-->
 
 
-            <div class="col-md-4">
-                <div class="form-group">
-                <label> Child Sub-Category </label>
-                <input type="text" value="{{ App\Models\Childsubcategory::find($product->childsubcategory)->childsubcategory }}" class="form-control" readonly/>
-                </div>
-            </div>
+        <!--    <div class="col-md-4">-->
+        <!--        <div class="form-group">-->
+        <!--        <label> Child Sub-Category </label>-->
+        <!--        <input type="text" value="{{ App\Models\Childsubcategory::find($product->childsubcategory)->childsubcategory }}" class="form-control" readonly/>-->
+        <!--        </div>-->
+        <!--    </div>-->
 
         
-        </div>
+        <!--</div>-->
 
 
         <div class="col-md-12">
@@ -75,8 +77,7 @@
                {!! Form::text('product_title', null, ('required' == 'required') ? ['class' => 'form-control', 'required' => 'required'] : ['class' => 'form-control']) !!}
             </div>
         </div>
-
-
+        
 
 
         <div class="col-md-12">
@@ -87,12 +88,6 @@
         </div>
         
         
-        <div class="col-md-12">
-            <div class="form-group">
-                {!! Form::label('maximum_price', 'Maximum Price') !!}
-                {!! Form::text('maximum_price', null, ('required' == 'required') ? ['class' => 'form-control', 'required' => 'required'] : ['class' => 'form-control']) !!}
-            </div>
-        </div>
 
         
         <div class="col-md-12">
@@ -103,13 +98,54 @@
         </div>
         
         
-           
+        
         <div class="col-md-12">
             <div class="form-group">
-                {!! Form::label('tags', 'Tags') !!}
-                {!! Form::text('tags', null, ('required' == 'required') ? ['class' => 'form-control', 'required' => 'required'] : ['class' => 'form-control']) !!}
+                {!! Form::label('item_number', 'Item number') !!}
+                {!! Form::text('item_number', null, ('required' == 'required') ? ['class' => 'form-control', 'required' => 'required'] : ['class' => 'form-control']) !!}
             </div>
         </div>
+        
+        
+         <div class="col-md-12">
+            <div class="form-group">
+                {!! Form::label('unspsc', 'Unspsc') !!}
+                {!! Form::text('unspsc', null, ('required' == 'required') ? ['class' => 'form-control', 'required' => 'required'] : ['class' => 'form-control']) !!}
+            </div>
+        </div>
+        
+        
+         <div class="col-md-12">
+            <div class="form-group">
+                {!! Form::label('manufacturer', 'Manufacturer') !!}
+                {!! Form::text('manufacturer', null, ('required' == 'required') ? ['class' => 'form-control', 'required' => 'required'] : ['class' => 'form-control']) !!}
+            </div>
+        </div>
+        
+        
+         <div class="col-md-12">
+            <div class="form-group">
+                {!! Form::label('qty', 'Product Qty') !!}
+                {!! Form::text('qty', null, ('required' == 'required') ? ['class' => 'form-control', 'required' => 'required'] : ['class' => 'form-control']) !!}
+            </div>
+        </div>
+        
+        
+         <div class="col-md-12">
+            <div class="form-group">
+                {!! Form::label('weight', 'Product Weight') !!}
+                {!! Form::text('weight', null, ('required' == 'required') ? ['class' => 'form-control', 'required' => 'required'] : ['class' => 'form-control']) !!}
+            </div>
+        </div>
+        
+        
+           
+        <!--<div class="col-md-12">-->
+        <!--    <div class="form-group">-->
+        <!--        {!! Form::label('tags', 'Tags') !!}-->
+        <!--        {!! Form::text('tags', null, ('required' == 'required') ? ['class' => 'form-control', 'required' => 'required'] : ['class' => 'form-control']) !!}-->
+        <!--    </div>-->
+        <!--</div>-->
         
 
         <div class="col-md-12">
@@ -121,12 +157,12 @@
 
 
         
-        <div class="col-md-12">
-            <div class="form-group">
-                {!! Form::label('additional_information', 'Additional Information') !!}
-                {!! Form::textarea('additional_information', null, ('required' == 'required') ? ['class' => 'form-control', 'id' => 'summary-ckeditor1', 'required' => 'required'] : ['class' => 'form-control']) !!}
-            </div>
-        </div>
+        <!--<div class="col-md-12">-->
+        <!--    <div class="form-group">-->
+        <!--        {!! Form::label('additional_information', 'Additional Information') !!}-->
+        <!--        {!! Form::textarea('additional_information', null, ('required' == 'required') ? ['class' => 'form-control', 'id' => 'summary-ckeditor1', 'required' => 'required'] : ['class' => 'form-control']) !!}-->
+        <!--    </div>-->
+        <!--</div>-->
 
 
         <div class="col-md-12">

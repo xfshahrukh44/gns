@@ -50,6 +50,7 @@
                                     <tr>
                                         <th>#</th>
                                         <th>Name</th>
+                                        <th>Image</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -58,6 +59,9 @@
                                     <tr>
                                         <td>{{ $item->id }}</td>
                                         <td>{{ $item->name }}</td>
+                                        <td>
+                                            <img src="{{ asset($item->image) }}" style="height:100px; width: 100px; border:1px solid #000; border-radius:10px; padding:5px;" />
+                                        </td>
                                         <td>
 
                                                 <a href="{{ url('/admin/category/' . $item->id . '/edit') }}"
@@ -73,12 +77,12 @@
                                                    'url' => ['/admin/category', $item->id],
                                                    'style' => 'display:inline'
                                                ]) !!}
-                                                <!-- {!! Form::button('<i class="fa fa-trash-o" aria-hidden="true"></i> Delete', array(
+                                                {!! Form::button('<i class="fa fa-trash-o" aria-hidden="true"></i> Delete', array(
                                                         'type' => 'submit',
                                                         'class' => 'btn btn-danger btn-sm',
                                                         'title' => 'Delete Category',
                                                         'onclick'=>'return confirm("Confirm delete?")'
-                                                )) !!} -->
+                                                )) !!}
 
                                             {!! Form::close() !!}
                                         </td>
@@ -89,6 +93,7 @@
                                     <tr>
                                         <th>#</th>
                                         <th>Name</th>
+                                         <th>Image</th>
                                         <th>Actions</th>
                                     </tr>
                                 </tfoot>

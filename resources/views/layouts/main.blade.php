@@ -284,33 +284,38 @@
                                         <span>Browse Categories</span>
                                     </div>
                                     <ul id="menu-categories" class="menu-browse">
+                                        @foreach($categories as $val)
                                         <li id="menu-item">
-                                            <a href="#"><span class="nav-link-text">Abrasives</span></a>
+                                            <a href="{{ url('categories?category_id='.$val->id) }}"><span class="nav-link-text">{{ $val->name }}</span></a>
                                         </li>
-                                        <li id="menu-item" class="menu-item">
-                                            <a href="#"><span class="nav-link-text">Bins &amp; Storage</span></a>
-                                        </li>
-                                        <li id="menu-item" class="menu-item">
-                                            <a href="#"><span class="nav-link-text">Chemicals</span></a>
-                                        </li>
-                                        <li id="menu-item" class="menu-item">
-                                            <a href="#"><span class="nav-link-text">Cleaning</span></a>
-                                        </li>
-                                        <li id="menu-item" class="menu-item">
-                                            <a href="#"><span class="nav-link-text">Cutting Tools</span></a>
-                                        </li>
-                                        <li id="menu-item" class="menu-item">
-                                            <a href="#"><span class="nav-link-text">Electrical</span></a>
-                                        </li>
-                                        <li id="menu-item" class="menu-item">
-                                            <a href="#"><span class="nav-link-text">Fasteners</span></a>
-                                        </li>
-                                        <li id="menu-item">
-                                            <a href="#"><span class="nav-link-text">Hydraulics</span></a>
-                                        </li>
-                                        <li id="menu-item" class="menu-item">
-                                            <a href="#"><span class="nav-link-text">Paints</span></a>
-                                        </li>
+                                        @endforeach
+                                        <!--<li id="menu-item">-->
+                                        <!--    <a href="#"><span class="nav-link-text">Abrasives</span></a>-->
+                                        <!--</li>-->
+                                        <!--<li id="menu-item" class="menu-item">-->
+                                        <!--    <a href="#"><span class="nav-link-text">Bins &amp; Storage</span></a>-->
+                                        <!--</li>-->
+                                        <!--<li id="menu-item" class="menu-item">-->
+                                        <!--    <a href="#"><span class="nav-link-text">Chemicals</span></a>-->
+                                        <!--</li>-->
+                                        <!--<li id="menu-item" class="menu-item">-->
+                                        <!--    <a href="#"><span class="nav-link-text">Cleaning</span></a>-->
+                                        <!--</li>-->
+                                        <!--<li id="menu-item" class="menu-item">-->
+                                        <!--    <a href="#"><span class="nav-link-text">Cutting Tools</span></a>-->
+                                        <!--</li>-->
+                                        <!--<li id="menu-item" class="menu-item">-->
+                                        <!--    <a href="#"><span class="nav-link-text">Electrical</span></a>-->
+                                        <!--</li>-->
+                                        <!--<li id="menu-item" class="menu-item">-->
+                                        <!--    <a href="#"><span class="nav-link-text">Fasteners</span></a>-->
+                                        <!--</li>-->
+                                        <!--<li id="menu-item">-->
+                                        <!--    <a href="#"><span class="nav-link-text">Hydraulics</span></a>-->
+                                        <!--</li>-->
+                                        <!--<li id="menu-item" class="menu-item">-->
+                                        <!--    <a href="#"><span class="nav-link-text">Paints</span></a>-->
+                                        <!--</li>-->
                                     </ul>
                                 </div>
                                 <ul class="navbar-nav m-auto">
