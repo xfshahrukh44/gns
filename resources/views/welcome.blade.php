@@ -145,84 +145,6 @@
                             </div>
                         </div>
                         @endforeach
-                        <!--<div class="item">-->
-                        <!--    <div class="product-category">-->
-                        <!--        <div class="product-info">-->
-                        <!--            <img src="{{asset('images/01-6.jpg')}}" class="img-fluid" alt="">-->
-                        <!--        </div>-->
-                        <!--        <div class="animate-blue">-->
-                        <!--            <h6>Aerosol </h6>-->
-                        <!--            <a href="#">-->
-                        <!--                <h6>3 products</h6>-->
-                        <!--            </a>-->
-                        <!--        </div>-->
-                        <!--    </div>-->
-                        <!--</div>-->
-                        <!--<div class="item">-->
-                        <!--    <div class="product-category">-->
-                        <!--        <div class="product-info">-->
-                        <!--            <img src="{{asset('images/c4.png')}}" class="img-fluid" alt="">-->
-                        <!--        </div>-->
-                        <!--        <div class="animate-blue">-->
-                        <!--            <h6>Bolts </h6>-->
-                        <!--            <a href="#">-->
-                        <!--                <h6>1 products</h6>-->
-                        <!--            </a>-->
-                        <!--        </div>-->
-                        <!--    </div>-->
-                        <!--</div>-->
-                        <!--<div class="item">-->
-                        <!--    <div class="product-category">-->
-                        <!--        <div class="product-info">-->
-                        <!--            <img src="{{asset('images/4.jpg')}}" class="img-fluid" alt="">-->
-                        <!--        </div>-->
-                        <!--        <div class="animate-blue">-->
-                        <!--            <h6>Cutting Tools </h6>-->
-                        <!--            <a href="#">-->
-                        <!--                <h6>1 products</h6>-->
-                        <!--            </a>-->
-                        <!--        </div>-->
-                        <!--    </div>-->
-                        <!--</div>-->
-                        <!--<div class="item">-->
-                        <!--    <div class="product-category">-->
-                        <!--        <div class="product-info">-->
-                        <!--            <img src="{{asset('images/c1.png')}}" class="img-fluid" alt="">-->
-                        <!--        </div>-->
-                        <!--        <div class="animate-blue">-->
-                        <!--            <h6>Dot fittings </h6>-->
-                        <!--            <a href="#">-->
-                        <!--                <h6>1 products</h6>-->
-                        <!--            </a>-->
-                        <!--        </div>-->
-                        <!--    </div>-->
-                        <!--</div>-->
-                        <!--<div class="item">-->
-                        <!--    <div class="product-category">-->
-                        <!--        <div class="product-info">-->
-                        <!--            <img src="{{asset('images/5.jpg')}}" class="img-fluid" alt="">-->
-                        <!--        </div>-->
-                        <!--        <div class="animate-blue">-->
-                        <!--            <h6>Electrical </h6>-->
-                        <!--            <a href="#">-->
-                        <!--                <h6>2 products</h6>-->
-                        <!--            </a>-->
-                        <!--        </div>-->
-                        <!--    </div>-->
-                        <!--</div>-->
-                        <!--<div class="item">-->
-                        <!--    <div class="product-category">-->
-                        <!--        <div class="product-info">-->
-                        <!--            <img src="{{asset('images/c3.png')}}" class="img-fluid" alt="">-->
-                        <!--        </div>-->
-                        <!--        <div class="animate-blue">-->
-                        <!--            <h6>Nuts </h6>-->
-                        <!--            <a href="#">-->
-                        <!--                <h6>1 products</h6>-->
-                        <!--            </a>-->
-                        <!--        </div>-->
-                        <!--    </div>-->
-                        <!--</div>-->
                     </div>
                 </div>
             </div>
@@ -239,23 +161,21 @@
                     </div>
                 </div>
                 @foreach($featured_products as $featured_product)
-                    <a href="{{route('front.productDetail', $featured_product->id)}}">
-                        <div class="col-lg-3 col-md-3 col-6">
-                            <div class="featured-pro-info">
-                                <div class="featured-side-icon">
-                                    <div class="cart-product">
-                                        <a href="{{route('front.productDetail', $featured_product->id)}}">
-                                            <img src="{{file_get_contents($featured_product->image) ? asset($featured_product->image) : asset('images/noimg.png')}}" class="img-fluid" alt="">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="discription-pro">
-                                    <a href="{{route('front.productDetail', $featured_product->id)}}">{{$featured_product->product_title}}</a>
-                                    <span>${{$featured_product->price}}</span>
+                    <div class="col-lg-3 col-md-3 col-6">
+                        <div class="featured-pro-info">
+                            <div class="featured-side-icon">
+                                <div class="cart-product">
+                                    <a href="{{route('front.productDetail', $featured_product->id)}}">
+                                        <img src="{{file_get_contents($featured_product->image) ? asset($featured_product->image) : asset('images/noimg.png')}}" class="img-fluid" alt="">
+                                    </a>
                                 </div>
                             </div>
+                            <div class="discription-pro">
+                                <a href="{{route('front.productDetail', $featured_product->id)}}">{{$featured_product->product_title}}</a>
+                                <span>${{$featured_product->price}}</span>
+                            </div>
                         </div>
-                    </a>
+                    </div>
                 @endforeach
             </div>
         </div>
