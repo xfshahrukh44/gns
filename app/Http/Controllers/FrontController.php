@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\imagetable;
 use App\Models\Article;
 use App\Models\Bikecheck;
 use App\Models\Book;
@@ -25,6 +26,25 @@ use Illuminate\Support\Facades\DB;
 
 class FrontController extends Controller
 {
+    public function __construct()
+    {
+        //$this->middleware('auth');
+
+        $logo = imagetable::
+        select('img_path')
+            ->where('table_name','=','logo')
+            ->first();
+
+        $favicon = imagetable::
+        select('img_path')
+            ->where('table_name','=','favicon')
+            ->first();
+
+        View()->share('logo',$logo);
+        View()->share('favicon',$favicon);
+
+    }
+
     public function index()
     {
         $shop_by_categories = Category::with('parent', 'children')
