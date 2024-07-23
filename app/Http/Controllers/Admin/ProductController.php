@@ -19,6 +19,7 @@ use Image;
 use File;
 use DB;
 use Session;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 class ProductController extends Controller
 {
 
@@ -67,7 +68,9 @@ class ProductController extends Controller
                 $product = Product::orderBy('id', 'desc')
                     ->when(!empty($keyword), function ($q) use ($keyword) {
                         return $q->where('product_title', 'LIKE', "%$keyword%")
-                            ->orWhere('description', 'LIKE', "%$keyword%");
+                            ->orWhere('description', 'LIKE', "%$keyword%")
+                            ->orWhere('item_number', 'LIKE', "%$keyword%")
+                            ->orWhere('id', 'LIKE', "%$keyword%");
                     })
                     ->paginate($perPage);
                 // $product = Product::orderBy('id', desc)->limit(100)->get();
@@ -364,10 +367,10 @@ class ProductController extends Controller
 			$product = product::where('id', $id)->first();
 			$image_path = public_path($product->image);	
 			
-			if(File::exists($image_path)) {
+// 			if(File::exists($image_path)) {
 				
-				File::delete($image_path);
-			} 
+// 				File::delete($image_path);
+// 			} 
 
             $file = $request->file('image');
             $fileNameExt = $request->file('image')->getClientOriginalName();
@@ -535,5 +538,46 @@ class ProductController extends Controller
 						return back();
 	
 	}	
+	
+	public function export(Request $request)
+    {
+        $keyword = $request->get('search');
+        
+        $products = Product::orderBy('id', 'desc')
+            ->when(!empty($keyword), function ($q) use ($keyword) {
+                return $q->where('product_title', 'LIKE', "%$keyword%")
+                    ->orWhere('description', 'LIKE', "%$keyword%")
+                    ->orWhere('id', 'LIKE', "%$keyword%");
+            })
+            ->get();
+
+        $headers = [
+            "Content-type" => "text/csv",
+            "Content-Disposition" => "attachment; filename=products.csv",
+            "Pragma" => "no-cache",
+            "Cache-Control" => "must-revalidate, post-check=0, pre-check=0",
+            "Expires" => "0"
+        ];
+
+        $columns = ['ID', 'Product Title', 'Price', 'Parent Category', 'Category'];
+
+        $callback = function() use ($products, $columns) {
+            $file = fopen('php://output', 'w');
+            fputcsv($file, $columns);
+
+            foreach ($products as $product) {
+                fputcsv($file, [
+                    $product->id,
+                    $product->product_title,
+                    $product->price,
+                    $product->parent_cat_name,
+                    $product->categorys->name
+                ]);
+            }
+            fclose($file);
+        };
+
+        return new StreamedResponse($callback, 200, $headers);
+    }
 	
 }

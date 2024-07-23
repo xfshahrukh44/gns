@@ -23,6 +23,11 @@
         <div class="btn-group float-md-right">
             <a class="btn btn-info mb-1" href="{{ url('admin/product/create') }}">Add Product</a>
         </div>
+        <form action="{{ route('export.products') }}" method="GET">
+            <input type="hidden" name="search" value="{{ $keyword }}">
+            <button type="submit" class="btn btn-success">Export Products</button>
+        </form>
+
     </div>
 </div>
 
@@ -70,6 +75,7 @@
                                         <th>#</th>
                                         <th>Product Title</th>
                                         <th>Product Price</th>
+                                        <th>Product Parent</th>
                                         <th>Product Category</th>
                                         <th>Product Image</th>
                                         <th>Actions</th>
@@ -87,6 +93,7 @@
                                         <td class="text-dark weight-600"> {{ \Illuminate\Support\Str::limit($item->product_title, 50, $end='...') }}
                                         </td>
                                         <td>{{ $item->price }}</td>
+                                        <td>{{ $item->parent_cat_name }}</td>
                                         <td>{{ $item->categorys->name }}</td>
                                         <td><img src="{{asset($item->image)}}" alt="" title="" width="150"></td>
                                         <td>

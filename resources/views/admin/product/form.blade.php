@@ -3,7 +3,6 @@
     <div class="row">
 
 
-        <?php $get_categories = DB::table('categories')->pluck('id');?>
     
         <div class="col-md-12">
             <div class="form-group">
@@ -11,7 +10,7 @@
                <select name="category" class="form-control" id="select1">
                     <option value="0"> Select Category </option>
                     @foreach($items as $key => $val_items)
-                        <option value="{{ $val_items->id }}" > {{ $val_items->name }} </option>
+                         <option value="{{ $val_items->id }}"  <?php if($product->category == $val_items->id){ echo 'selected'; } ?> > {{ $val_items->name }} </option>
                     @endforeach
                </select>
             </div>
@@ -181,7 +180,7 @@
         <div class="col-md-12">
             <div class="form-group">
                 {!! Form::label('image', 'Image') !!}
-                <input class="form-control dropify" name="image" type="file" id="image" {{ ($product->image != '') ? "data-default-file = /$product->image" : ''}} {{ ($product->image == '') ? "required" : ''}} value="{{$product->image}}">
+                <input class="form-control dropify" name="image" type="file" id="image" data-default-file="{{ asset($product->image) }}"  value="{{$product->image}}">
             </div>
         </div>
 

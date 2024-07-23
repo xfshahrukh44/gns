@@ -18,7 +18,7 @@
 
 <?php 
 
-    $category = DB::table('categories')->get();
+    $categories = DB::table('categories')->get();
 
 ?>
 
@@ -27,8 +27,8 @@
         {!! Form::label('category', 'Parent Category') !!}
     	<select name="parent_id" class="form-control">
     	    <option value="0"> No Parent </option>
-            @foreach($category as $key => $val_category)
-            <option value="{{ $val_category->id }}"> {{ $val_category->name }} </option>
+            @foreach($categories as $key => $val_category)
+            <option value="{{ $val_category->id }}" {{ $val_category->id == $category->parent_id ? 'selected' : '' }}> {{ $val_category->name }} </option>
             @endforeach
         </select>
     </div>

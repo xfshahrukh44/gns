@@ -88,7 +88,8 @@ class ImportProducts extends Command
     {
         $contents = file_get_contents($url);
         $name = basename($url);
-        $filename = time() . '_' . $name.'_'.$count;
+        // $filename = time() . '_' . $name.'_'.$count;
+        $filename = $name;
         $path = 'uploads/products/' . $filename;
         file_put_contents(public_path($path), $contents);
         return $path;

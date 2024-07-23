@@ -322,6 +322,8 @@ Route::get('user-ip', 'HomeController@getusersysteminfo');
 route::get('status/delivered/{id}', 'admin\\productcontroller@updatestatusdelivered')->name('status.delivered');
 route::get('status/cancelled/{id}', 'admin\\productcontroller@updatestatuscancelled')->name('status.cancelled');
 
+Route::get('export-products', 'Admin\\ProductController@export')->name('export.products');
+
 Route::resource('admin/blog', 'Admin\\BlogController');
 Route::resource('admin/category', 'Admin\\CategoryController');
 
