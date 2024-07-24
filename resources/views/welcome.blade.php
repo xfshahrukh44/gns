@@ -67,7 +67,7 @@
                             <source src="{{asset('images/video.ogg')}}" type="video/ogg">
                         </video>
                         <div class="banner-info">
-                            <h1>GNS HOSE & FITTINGS <span class="d-block">INDSUTRIAL SUPPLY INC </span></h1>
+                            <h1>GNS HOSE & FITTINGS <span class="d-block">INDUSTRIAL SUPPLY INC </span></h1>
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
                                 Ipsum has been the industry's standard dummy text ever since the 1500s </p>
                             <a href="{{ route('front.shop') }}" class="btn red-btn">SHOP NOW </a>

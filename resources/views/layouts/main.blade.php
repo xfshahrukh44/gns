@@ -102,8 +102,8 @@
                             </div>
 {{--                            <div>--}}
                             <form class="category-search" id="form_search" action="{{route('front.shop')}}">
-                                <input name="title" type="search" name="search" class="form-control" placeholder="Search for products"
-                                       requiered="">
+                                <input type="search" name="title" class="form-control" placeholder="Search for products"
+                                       required="" value="{{request()->get('title')}}">
                                 <button type="submitf" class="search-icon fa-microphone">
 
                                 </button>
@@ -337,7 +337,7 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-12 p-0">
                         <div class="copy-right-para">
-                            <p>© 2024 GNS HOSE & FITTING INDSUTRIAL SUPPLY INC ALL RIGHT RESERVED</p>
+                            <p>© 2024 GNS HOSE & FITTING INDUSTRIAL SUPPLY INC ALL RIGHT RESERVED</p>
                         </div>
                     </div>
                 </div>
