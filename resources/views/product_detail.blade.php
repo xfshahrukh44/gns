@@ -38,43 +38,43 @@
 
     <?php
             
-        $apiKey = 'WvWbX6ydJMwVfmsWMRRD6suC'; // Replace with your remove.bg API key
-        $imageUrl = $product->feature_image();
-        
-        // Initialize cURL session
-        $ch = curl_init();
-        
-        // Set the URL and options for the cURL request
-        curl_setopt($ch, CURLOPT_URL, 'https://api.remove.bg/v1.0/removebg');
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query([
-            'image_url' => $imageUrl,
-            'size' => 'auto'
-        ]));
-        curl_setopt($ch, CURLOPT_HTTPHEADER, [
-            'X-Api-Key: ' . $apiKey
-        ]);
-        
-        // Execute the cURL request
-        $response = curl_exec($ch);
-        
-        // Check for errors
-        if(curl_errno($ch)) {
-            echo 'Error:' . curl_error($ch);
-        }
-        
-        // Close the cURL session
-        curl_close($ch);
-        
-        // Save the processed image
-        $image_name = explode(DIRECTORY_SEPARATOR, $imageUrl);
-        $image_name = $image_name[count($image_name) - 1];
-        $chunks = explode('.', $image_name);
-        $image_name = $chunks[0];
-        $extension = $chunks[1];
-        $processedImage = $image_name . '.' . $extension;
-        file_put_contents($processedImage, $response);
+//        $apiKey = 'WvWbX6ydJMwVfmsWMRRD6suC'; // Replace with your remove.bg API key
+//        $imageUrl = $product->feature_image();
+//
+//        // Initialize cURL session
+//        $ch = curl_init();
+//
+//        // Set the URL and options for the cURL request
+//        curl_setopt($ch, CURLOPT_URL, 'https://api.remove.bg/v1.0/removebg');
+//        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+//        curl_setopt($ch, CURLOPT_POST, true);
+//        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query([
+//            'image_url' => $imageUrl,
+//            'size' => 'auto'
+//        ]));
+//        curl_setopt($ch, CURLOPT_HTTPHEADER, [
+//            'X-Api-Key: ' . $apiKey
+//        ]);
+//
+//        // Execute the cURL request
+//        $response = curl_exec($ch);
+//
+//        // Check for errors
+//        if(curl_errno($ch)) {
+//            echo 'Error:' . curl_error($ch);
+//        }
+//
+//        // Close the cURL session
+//        curl_close($ch);
+//
+//        // Save the processed image
+//        $image_name = explode(DIRECTORY_SEPARATOR, $imageUrl);
+//        $image_name = $image_name[count($image_name) - 1];
+//        $chunks = explode('.', $image_name);
+//        $image_name = $chunks[0];
+//        $extension = $chunks[1];
+//        $processedImage = $image_name . '.' . $extension;
+//        file_put_contents($processedImage, $response);
 
     
     ?>
