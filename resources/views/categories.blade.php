@@ -30,9 +30,9 @@
         <div class="container">
             <div class="row">
                 @foreach($categories as $category)
-                    @if (!in_array($category->id, [461, 637, 663, 664, 665, 668, 672, 673, 888]))
+                    @if (!in_array($category->id, [461, 637, 663, 664, 665, 668, 672, 673, 888, 77, 291]))
                         <div class="col-lg-2 col-md-2 col-6">
-                                <div class="product-category">
+                                <div class="product-category" style="min-height: 164px !important;">
                                     <a href="{{ ($category->children->count() == 0 && $category->products->count() > 0) ? route('front.categoryDetail', $category->id) : route('front.categories', ['category_id' => $category->id]) }}">
                                         <div class="product-info">
                                             <img src="{{asset(file_get_contents($category->image) ? $category->image : 'images/noimg.png')}}" class="img-fluid" alt="">

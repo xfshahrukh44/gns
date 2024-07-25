@@ -261,6 +261,8 @@ Route::post('update-content', 'HomeController@updateContent')->name('update-cont
 Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'LanguageController@switchLang']);
 
 Route::get('/temp', function () {
+    //291 > 278
+    \Illuminate\Support\Facades\DB::table('categories')->where('parent_id', 291)->update(['parent_id' => 278]);
 //    $data = json_decode(file_get_contents(asset('scrape-data/fastenal/step_2_products.json')));
 //    $data2 = json_decode(file_get_contents(asset('scrape-data/tifco/step_2_products.json')));
 //    dd($data2->products[0]);
