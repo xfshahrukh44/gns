@@ -112,6 +112,7 @@
                                 @endphp
                                 <div class="selet-top">
                                     <select name="category_id" id="">
+                                        <option value="" selected>Select a category</option>
                                         @foreach($categories_for_dropdown as $category)
                                             <option value="{{$category->id}}">{{$category->name}}</option>
                                         @endforeach

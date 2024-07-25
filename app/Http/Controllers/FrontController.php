@@ -168,28 +168,18 @@ class FrontController extends Controller
             return $q->where('product_title', 'LIKE', '%'.$filters['title'].'%');
         })->when($filters['category_id'], function ($q) use ($filters) {
             return $q->where('category', $filters['category_id'])
-                    ->orWhere(function ($q) use ($filters) {
-                        return $q->whereHas('categorys', function ($q) use ($filters) {
-                            return $q->where('parent_id', $filters['category_id'])
-                                    ->orWhere(function ($q) use ($filters) {
-                                        return $q->whereHas('parent', function ($q) use ($filters) {
-                                            return $q->where('parent_id', $filters['category_id'])
-                                                    ->orWhere(function ($q) use ($filters) {
-                                                        return $q->whereHas('parent', function ($q) use ($filters) {
-                                                            return $q->where('parent_id', $filters['category_id'])
-                                                                    ->orWhere(function ($q) use ($filters) {
-                                                                        return $q->whereHas('parent', function ($q) use ($filters) {
-                                                                            return $q->where('parent_id', $filters['category_id'])
-                                                                                    ->orWhere(function ($q) use ($filters) {
-                                                                                        return $q->whereHas('parent', function ($q) use ($filters) {
-                                                                                            return $q->where('parent_id', $filters['category_id']);
-                                                                                        });
-                                                                                    });
-                                                                        });
-                                                                    });
-                                                        });
+                    ->orWhereHas('categorys', function ($q) use ($filters) {
+                        return $q->where('parent_id', $filters['category_id'])
+                            ->orWhereHas('parent', function ($q) use ($filters) {
+                                return $q->where('parent_id', $filters['category_id'])
+                                    ->orWhereHas('parent', function ($q) use ($filters) {
+                                        return $q->where('parent_id', $filters['category_id'])
+                                            ->orWhereHas('parent', function ($q) use ($filters) {
+                                                return $q->where('parent_id', $filters['category_id'])
+                                                    ->orWhereHas('parent', function ($q) use ($filters) {
+                                                        return $q->where('parent_id', $filters['category_id']);
                                                     });
-                                        });
+                                            });
                                     });
                             });
                         });
