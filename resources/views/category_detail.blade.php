@@ -141,7 +141,7 @@
                                 @endforeach
                                 <th> Item number </th>
                                 <th>SKU </th>
-                                <th> Price</th>
+{{--                                <th> Price</th>--}}
                                 <th> Qty</th>
                                 <th> Weight</th>
                                 <th> Action</th>
@@ -158,7 +158,7 @@
                                     <td>
                                         {{$product->sku ?? 'N/A'}}
                                     </td>
-                                    <td>{{('$' . $product->price) ?? 'N/A'}}</td>
+{{--                                    <td>{{('$' . $product->price) ?? 'N/A'}}</td>--}}
                                     
                                     <td>{{( $product->qty) ?? 'N/A'}}</td>
                                     
