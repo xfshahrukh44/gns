@@ -30,7 +30,7 @@
         <div class="container">
             <div class="row">
                 @foreach($categories as $category)
-                    @if (!in_array($category->id, [461, 637, 663, 664, 665, 668, 672, 673, 888, 77, 291, 115, 116, 117, 118, 119, 120, 121, 124, 125, 126, 127, 128, 129, 130, 131, 132, 134, 135, 137, 138, 139]))
+                    @if (!in_array($category->id, [461, 637, 663, 664, 665, 668, 672, 673, 888, 77, 291, 115, 116, 117, 118, 119, 120, 121, 124, 125, 126, 127, 128, 129, 130, 131, 132, 134, 135, 137, 138, 139, 245, 246, 248]))
                         <div class="col-lg-2 col-md-2 col-6">
                                 <div class="product-category" style="min-height: 164px !important;">
                                     <a href="{{ ($category->children->count() == 0 && $category->products->count() > 0) ? route('front.categoryDetail', $category->id) : route('front.categories', ['category_id' => $category->id]) }}">
