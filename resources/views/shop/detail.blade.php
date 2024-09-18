@@ -45,7 +45,7 @@
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quod ea voluptatibus atque dolorum
                             ad quo, pariatur iure iste, ullam labore facilis sint fugit laboriosam ex dolores! Sunt,
                             delectus vero.</p>
-                        <p class="price">$ {{ $product_detail->price }}</p>
+{{--                        <p class="price">$ {{ $product_detail->price }}</p>--}}
 
                         @foreach ($att_model as $att_models)
                             <div class="variation">
@@ -117,9 +117,9 @@
                                 <i class="fas fa-star"></i>
                             </div>
                             <ul>
-                                <li>
-                                    <h5>${{ $shops->price }}</h5>
-                                </li>
+{{--                                <li>--}}
+{{--                                    <h5>${{ $shops->price }}</h5>--}}
+{{--                                </li>--}}
                                 <li>
                                     <a href="{{ route('shopDetail', $shops->id) }}">Add to cart</a>
                                 </li>

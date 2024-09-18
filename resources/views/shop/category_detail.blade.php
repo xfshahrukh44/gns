@@ -92,7 +92,7 @@
                         </div>
                         <div class="bottom_text">
                           <h3>{{ $value->product_title }}</h3>
-                          <h4><del class="clr">{{ $value->price }}</del>  {{ $value->price }}</h4>
+{{--                          <h4><del class="clr">{{ $value->price }}</del>  {{ $value->price }}</h4>--}}
                           <a class="btn4 hvr-bounce-to-bottom" href="{{ url('shop-detail/'.$value->id) }}">Add To Cart</a>
                         </div>
                       </div>

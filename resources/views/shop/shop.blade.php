@@ -54,9 +54,9 @@
                                 <i class="fas fa-star"></i>
                             </div>
                             <ul>
-                                <li>
-                                    <h5>${{ $shops->price }}</h5>
-                                </li>
+{{--                                <li>--}}
+{{--                                    <h5>${{ $shops->price }}</h5>--}}
+{{--                                </li>--}}
                                 <li>
                                     <a
                                         href="{{ route('shopDetail', ['id' => $item->id, 'name' => preg_replace('/[^A-Za-z0-9\-]/', '', strtolower(str_replace(' ', '-', $item->product_title)))]) }}}">Add

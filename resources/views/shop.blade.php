@@ -75,7 +75,10 @@
                                         <img src="{{ url($val->image) }}" class="img-fluid" alt="">
                                     </figure>
                                     <div class="pro-price_info">
-                                        <h5>{{ $val->product_title }} <span>{{ $val->price }}</span></h5>
+                                        <h5>
+                                            {{ $val->product_title }}
+{{--                                            <span>{{ $val->price }}</span>--}}
+                                        </h5>
                                     </div>
                                 </a>
                                 @endforeach
@@ -239,7 +242,7 @@
                                             </div>
                                             <div class="discription-pro">
                                                 <a href="#">{{$product->product_title}}</a>
-                                                <span>${{$product->price}}</span>
+{{--                                                <span>${{$product->price}}</span>--}}
                                             </div>
                                         </div>
                                     </div>

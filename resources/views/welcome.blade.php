@@ -172,7 +172,7 @@
                             </div>
                             <div class="discription-pro">
                                 <a href="{{route('front.productDetail', $featured_product->id)}}">{{$featured_product->product_title}}</a>
-                                <span>${{$featured_product->price}}</span>
+{{--                                <span>${{$featured_product->price}}</span>--}}
                             </div>
                         </div>
                     </div>

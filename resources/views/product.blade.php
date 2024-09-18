@@ -173,7 +173,7 @@
                                         </div>
                                         <div class="opt-sec2-text">
                                             <p> {{ $val_product->product_title }} </p>
-                                            <h6>${{ $val_product->price }} <?php if($val_product->maximum_price != "" && $val_product->maximum_price != "0"){ echo ' - $'.$val_product->maximum_price; } ?> </h6>
+{{--                                            <h6>${{ $val_product->price }} <?php if($val_product->maximum_price != "" && $val_product->maximum_price != "0"){ echo ' - $'.$val_product->maximum_price; } ?> </h6>--}}
                                             <!-- <a href="#" class="btn btn-bustom">Add to cart</a> -->
                                         </div>
                                     </a>
