@@ -79,45 +79,45 @@
     </section>
 
 
-    <section class="arrival-discount">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-4 col-md-4 col-12 p-0">
-                    <div class="discount-solution">
-                        <div class="solution-img">
-                            <img src="{{asset('images/01.jpg')}}" class="img-fluid" alt="">
-                        </div>
-                        <div class="info-shop">
-                            <h3>20% DISCOUNT</h3>
-                            <a href="{{ route('front.shop') }}" class="btn blue-btn">SHOP NOW </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-12 p-0">
-                    <div class="discount-solution">
-                        <div class="solution-img">
-                            <img src="{{asset('images/02.jpg')}}" class="img-fluid" alt="">
-                        </div>
-                        <div class="info-shop">
-                            <h3>NEW ARRIVALS</h3>
-                            <a href="{{ route('front.shop') }}" class="btn blue-btn">SHOP NOW </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-12 p-0">
-                    <div class="discount-solution">
-                        <div class="solution-img">
-                            <img src="{{asset('images/03.jpg')}}" class="img-fluid" alt="">
-                        </div>
-                        <div class="info-shop">
-                            <h3>SUPPLIES & SOLUTIONS</h3>
-                            <a href="{{ route('front.shop') }}" class="btn blue-btn">SHOP NOW </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+{{--    <section class="arrival-discount">--}}
+{{--        <div class="container-fluid">--}}
+{{--            <div class="row">--}}
+{{--                <div class="col-lg-4 col-md-4 col-12 p-0">--}}
+{{--                    <div class="discount-solution">--}}
+{{--                        <div class="solution-img">--}}
+{{--                            <img src="{{asset('images/01.jpg')}}" class="img-fluid" alt="">--}}
+{{--                        </div>--}}
+{{--                        <div class="info-shop">--}}
+{{--                            <h3>20% DISCOUNT</h3>--}}
+{{--                            <a href="{{ route('front.shop') }}" class="btn blue-btn">SHOP NOW </a>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-lg-4 col-md-4 col-12 p-0">--}}
+{{--                    <div class="discount-solution">--}}
+{{--                        <div class="solution-img">--}}
+{{--                            <img src="{{asset('images/02.jpg')}}" class="img-fluid" alt="">--}}
+{{--                        </div>--}}
+{{--                        <div class="info-shop">--}}
+{{--                            <h3>NEW ARRIVALS</h3>--}}
+{{--                            <a href="{{ route('front.shop') }}" class="btn blue-btn">SHOP NOW </a>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-lg-4 col-md-4 col-12 p-0">--}}
+{{--                    <div class="discount-solution">--}}
+{{--                        <div class="solution-img">--}}
+{{--                            <img src="{{asset('images/03.jpg')}}" class="img-fluid" alt="">--}}
+{{--                        </div>--}}
+{{--                        <div class="info-shop">--}}
+{{--                            <h3>SUPPLIES & SOLUTIONS</h3>--}}
+{{--                            <a href="{{ route('front.shop') }}" class="btn blue-btn">SHOP NOW </a>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
 
 
     <section class="shop-category">
