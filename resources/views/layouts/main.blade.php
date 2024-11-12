@@ -145,7 +145,7 @@
 {{--                                        <span>0</span>--}}
 {{--                                    </a>--}}
                                     <a href="{{route('cart')}}" type="button" aria-controls="offcanvasRight" class="lock-icon">
-                                        <span>{{count(session()->get('cart')) ?? 0}}</span>
+                                        <span>{{count(session()->get('cart') ?? []) ?? 0}}</span>
                                     </a>
                                 </div>
 {{--                                <div class="side-zero">--}}

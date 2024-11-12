@@ -166,7 +166,11 @@
                             <div class="featured-side-icon">
                                 <div class="cart-product">
                                     <a href="{{route('front.productDetail', $featured_product->id)}}">
-                                        <img src="{{file_get_contents($featured_product->image) ? asset($featured_product->image) : asset('images/noimg.png')}}" class="img-fluid" alt="">
+                                        @if(!is_null($featured_product->image))
+                                            <img src="{{file_get_contents($featured_product->image) ? asset($featured_product->image) : asset('images/noimg.png')}}" class="img-fluid" alt="">
+                                        @else
+                                            <img src="{{asset('images/noimg.png')}}" class="img-fluid" alt="">
+                                        @endif
                                     </a>
                                 </div>
                             </div>
