@@ -175,9 +175,10 @@ class HomeController extends Controller
         $string = '<strong>Name: </strong> '.$inquiry->fname.' <br /> <strong>Email: </strong> ' . $inquiry->email;
 
         Mail::send([], [], function($message) use ($string) {
-            $message->setBody($string, 'text/html');
-            $message->from(env('MAIL_FROM_ADDRESS') ?? 'custombackend@gmail.com', 'User contact');
-            $message->to(['nshumway@nicolasshumway.com', 'ns45@nicolasshumway.com'])->subject('User contact');
+            $message->from(env('MAIL_FROM_ADDRESS', 'custombackend@gmail.com'), 'User contact');
+            $message->to(['nshumway@nicolasshumway.com', 'ns45@nicolasshumway.com'])
+                    ->subject('User contact')
+                    ->html($string);  // Use the `html` method to set the HTML body.
         });
 
 

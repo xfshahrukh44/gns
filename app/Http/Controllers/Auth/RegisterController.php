@@ -106,10 +106,6 @@ class RegisterController extends Controller
             $profile->dob = $request->dob;
             $profile->save();
         }
-        activity($user->name)
-            ->performedOn($user)
-            ->causedBy($user)
-            ->log('Registered');
         $user->assignRole('user');
     }
 }
